@@ -6,7 +6,7 @@ package Entites;
 
 /**
  *
- * @author Admin
+ * @author Admin 
  */
 public class Client {
     
