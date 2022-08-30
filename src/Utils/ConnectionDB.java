@@ -16,30 +16,27 @@ import java.util.logging.Logger;
  * @author Admin
  */
 public class ConnectionDB {
-   
-    private static Connection con ;
-    private static String url="jdbc:mysql://localhost/smartevent01";
+
+    private static Connection con;
+    private static String url = "jdbc:mysql://localhost/smartevent01";
 
     private ConnectionDB() {
-       
+
     }
-   
-    public static Connection openConnection()
-    {
-       if(con == null){
-         try {          
-            con = (Connection) DriverManager.getConnection(url,"root","");                  
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnectionDB.class.getName()).log(Level.SEVERE, null, ex);
+
+    public static Connection openConnection() {
+        if (con == null) {
+            try {
+                con = (Connection) DriverManager.getConnection(url, "root", "");
+            } catch (SQLException ex) {
+                Logger.getLogger(ConnectionDB.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-       }
         return con;
     }
-   
-    public static void closeConnection()
-    {      
-        if(con != null)
-          con = null;
+
+    public static void closeConnection() {
+        if (con != null)
+            con = null;
     }
 }
-
