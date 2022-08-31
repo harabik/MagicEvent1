@@ -72,10 +72,5 @@
       </Button>
       <TextArea fx:id="tacv" layoutX="313.0" layoutY="98.0" prefHeight="98.0" prefWidth="247.0" />
       <ListView fx:id="LvFiles" layoutX="319.0" layoutY="272.0" prefHeight="153.0" prefWidth="247.0" />
-      <Button fx:id="Reset" layoutX="502.0" layoutY="14.0" mnemonicParsing="false" onAction="#GotoHom" text="Reset">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

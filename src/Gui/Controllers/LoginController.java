@@ -77,7 +77,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private void goToBusinessUsers(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../Views/SignupBusinessUsers.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../Views/LoginBusinessUser.fxml"));
         scene = new Scene(root);
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

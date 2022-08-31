@@ -9,39 +9,38 @@ package Entites;
  * @author Admin
  */
 public class BusinessUser {
-    private int id;
-    private int num;
-    private String nom;
-    private String login;
-    private String prenom;
-    private String password;
-    private String cin;
-    private String adress;
-    private String email;
-   
-    
+
+    private int id; // default
+    private int id_user; // null
+    private String login; // not null
+    private String password; // not null
+    private String role; // not null
+    private String nom; // not null
+    private String prenom; // not null
+    private String email; // not null
+    private String num; // not null
+    private String cin; // not null
+    private String adresse; // null
+    private String active; // not null default "1"
 
     public BusinessUser() {
     }
 
-    public BusinessUser(String login, String password) {
-        this.login = login;
-        this.password = password;
-    }
-
-    public BusinessUser(int id, int num, String nom, String login, String prenom, String password, String cin, String adress, String email) {
+    public BusinessUser(int id, int id_user, String login, String password, String role, String nom, String prenom,
+            String email, String num, String cin, String adresse, String active) {
         this.id = id;
-        this.num = num;
-        this.nom = nom;
+        this.id_user = id_user;
         this.login = login;
-        this.prenom = prenom;
         this.password = password;
-        this.cin = cin;
-        this.adress = adress;
+        this.role = role;
+        this.nom = nom;
+        this.prenom = prenom;
         this.email = email;
+        this.num = num;
+        this.cin = cin;
+        this.adresse = adresse;
+        this.active = active;
     }
-
-   
 
     public int getId() {
         return id;
@@ -51,12 +50,36 @@ public class BusinessUser {
         this.id = id;
     }
 
-    public int getNum() {
-        return num;
+    public int getId_user() {
+        return id_user;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getNom() {
@@ -74,13 +97,21 @@ public class BusinessUser {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
-    
-    public String getPassword() {
-        return password;
+
+    public String getEmail() {
+        return email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNum() {
+        return num;
+    }
+
+    public void setNum(String num) {
+        this.num = num;
     }
 
     public String getCin() {
@@ -91,31 +122,20 @@ public class BusinessUser {
         this.cin = cin;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAdresse() {
+        return adresse;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
-    public String getEmail() {
-        return email;
+    public String getActive() {
+        return active;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setActive(String active) {
+        this.active = active;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    
-    
-    
 }
