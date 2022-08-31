@@ -19,7 +19,7 @@ public class MagicEventMainFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Liste_traiteur.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Home.fxml"));
 
         // Parent root =
         // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteLocationMateriel.fxml"));
