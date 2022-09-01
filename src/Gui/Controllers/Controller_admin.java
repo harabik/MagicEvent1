@@ -182,6 +182,9 @@ public class Controller_admin implements Initializable {
     private TableColumn<Client, String> numc;
 
     @FXML
+    private TableColumn<Client, String> emailc;
+
+    @FXML
     private TextField password1_client;
 
     @FXML
@@ -229,7 +232,6 @@ public class Controller_admin implements Initializable {
     /***************** */
 
     // BusinessUser user = new BusinessUser();
-    Client client = new Client();
 
     /***************************************************************
      * ***************************************************************
@@ -999,6 +1001,7 @@ public class Controller_admin implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         loadDate();
+        loadDate_c();
     }
 
     @FXML
@@ -1161,6 +1164,172 @@ public class Controller_admin implements Initializable {
         };
         // editCol.setCellFactory(cellFoctory);
         UserTable.setItems(UserList);
+
+    }
+
+    String query1 = null;
+
+    ResultSet resultSet1 = null;
+    Client client = null;
+    // BusinessUser user = new BusinessUser()
+    ObservableList<Client> ClientList = FXCollections.observableArrayList();
+
+    @FXML
+    private void refreshTable_c() {
+        try {
+            UserList.clear();
+
+            query1 = "SELECT * FROM `client`";
+
+            preparedStatement = (PreparedStatement) connection.prepareStatement(query1);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                ClientList.add(new Client(
+
+                        resultSet.getInt("id"),
+                        resultSet.getString("username"),
+                        resultSet.getString("password"),
+                        resultSet.getString("nom"),
+                        resultSet.getString("prenom"),
+
+                        resultSet.getString("num"),
+                        resultSet.getString("email"),
+                        resultSet.getString("gende"),
+                        resultSet.getString("id_ville"),
+                        resultSet.getString("id_region"),
+
+                        resultSet.getString("is_active")));
+                ClientTable.setItems(ClientList);
+
+            }
+
+        } catch (SQLException ex) {
+            // Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null,
+            // ex);
+            JOptionPane.showMessageDialog(null, " list  " + ex.getMessage());
+
+        }
+
+    }
+
+    private void loadDate_c() {
+
+        try {
+            connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        ;
+
+        refreshTable_c();
+
+        idc.setCellValueFactory(new PropertyValueFactory<>("id"));
+        loginc.setCellValueFactory(new PropertyValueFactory<>("username"));
+        nomc.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        prenomc.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        numc.setCellValueFactory(new PropertyValueFactory<>("num"));
+        emailc.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+        // add cell of button edit
+        Callback<TableColumn<Client, String>, TableCell<Client, String>> cellFoctory = (
+                TableColumn<Client, String> param) -> {
+            // make cell containing buttons
+            final TableCell<Client, String> cell = new TableCell<Client, String>() {
+                @Override
+                public void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty);
+                    // that cell created only on non-empty rows
+                    if (empty) {
+                        setGraphic(null);
+                        setText(null);
+
+                    }
+                    /*
+                     * else {
+                     * 
+                     * FontAwesomeIconView deleteIcon = new
+                     * FontAwesomeIconView(FontAwesomeIcon.TRASH);
+                     * FontAwesomeIconView editIcon = new
+                     * FontAwesomeIconView(FontAwesomeIcon.PENCIL_SQUARE);
+                     * 
+                     * deleteIcon.setStyle(
+                     * " -fx-cursor: hand ;"
+                     * + "-glyph-size:28px;"
+                     * + "-fx-fill:#ff1744;"
+                     * );
+                     * editIcon.setStyle(
+                     * " -fx-cursor: hand ;"
+                     * + "-glyph-size:28px;"
+                     * + "-fx-fill:#00E676;"
+                     * );
+                     * deleteIcon.setOnMouseClicked((MouseEvent event) -> {
+                     * 
+                     * try {
+                     * student = UserTable.getSelectionModel().getSelectedItem();
+                     * query = "DELETE FROM `student` WHERE id  ="+student.getId();
+                     * connection = DbConnect.getConnect();
+                     * preparedStatement = connection.prepareStatement(query);
+                     * preparedStatement.execute();
+                     * refreshTable();
+                     * 
+                     * } catch (SQLException ex) {
+                     * Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null,
+                     * ex);
+                     * }
+                     * 
+                     * 
+                     * 
+                     * 
+                     * 
+                     * });
+                     * editIcon.setOnMouseClicked((MouseEvent event) -> {
+                     * 
+                     * student = UserTable.getSelectionModel().getSelectedItem();
+                     * FXMLLoader loader = new FXMLLoader ();
+                     * loader.setLocation(getClass().getResource("/tableView/addStudent.fxml"));
+                     * try {
+                     * loader.load();
+                     * } catch (IOException ex) {
+                     * Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null,
+                     * ex);
+                     * }
+                     * 
+                     * AddStudentController addStudentController = loader.getController();
+                     * addStudentController.setUpdate(true);
+                     * addStudentController.setTextField(student.getId(), student.getName(),
+                     * student.getBirth().toLocalDate(),student.getAdress(), student.getEmail());
+                     * Parent parent = loader.getRoot();
+                     * Stage stage = new Stage();
+                     * stage.setScene(new Scene(parent));
+                     * stage.initStyle(StageStyle.UTILITY);
+                     * stage.show();
+                     * 
+                     * 
+                     * 
+                     * 
+                     * });
+                     * 
+                     * HBox managebtn = new HBox(editIcon, deleteIcon);
+                     * managebtn.setStyle("-fx-alignment:center");
+                     * HBox.setMargin(deleteIcon, new Insets(2, 2, 0, 3));
+                     * HBox.setMargin(editIcon, new Insets(2, 3, 0, 2));
+                     * 
+                     * setGraphic(managebtn);
+                     * 
+                     * setText(null);
+                     * 
+                     * }
+                     */
+                }
+
+            };
+
+            return cell;
+        };
+        // editCol.setCellFactory(cellFoctory);
+        ClientTable.setItems(ClientList);
 
     }
 

@@ -169,12 +169,5 @@ public class Client {
     public void setActive(String active) {
         this.active = active;
     }
-    /*
-     * public void initialize(Controller_admin controller_admin, URL location,
-     * ResourceBundle resources) {
-     * // TODO Auto-generated method stub
-     * controller_admin.fetColumnList();
-     * controller_admin.fetRowList();
-     * }
-     */
+
 }
