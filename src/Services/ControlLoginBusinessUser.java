@@ -24,26 +24,49 @@ public class ControlLoginBusinessUser {
 
         try {
 
-            st=ConnectionDB.openConnection().createStatement();
-            String check = "select * from login where login ='" + BU.getLogin() + "' and password= '" + BU.getPassword() + "'";
+            st = ConnectionDB.openConnection().createStatement();
+            String check = "select * from bus_user where login ='" + BU.getLogin() + "' and password= '"
+                    + BU.getPassword() + "'";
             ResultSet result = st.executeQuery(check);
             while (result.next()) {
                 type = result.getString(3);
                 return true;
             }
             ConnectionDB.closeConnection();
-                   } catch (SQLException ex) {
+        } catch (SQLException ex) {
             ConnectionDB.closeConnection();
-            System.out.println("hi" + ex.getMessage());
+            System.out.println("hiiiii" + ex.getMessage());
         }
 
         return false;
     }
-//    public String getBus_user_id(){
-//       
-//        if(type.equals("Traiteur"))
-//            return "admin";
-//        else
-//            return "magasinier";
-//    }
+
+    public String isRole(BusinessUser BU) {
+
+        try {
+
+            st = ConnectionDB.openConnection().createStatement();
+            String check = "select role from bus_user where login ='" + BU.getLogin() + "' and password= '"
+                    + BU.getPassword() + "'";
+            ResultSet result = st.executeQuery(check);
+            while (result.next()) {
+                type = result.getString(1);
+                return type;
+            }
+            ConnectionDB.closeConnection();
+        } catch (SQLException ex) {
+            ConnectionDB.closeConnection();
+            System.out.println("hiiiii" + ex.getMessage());
+        }
+
+        return "-1";
+    }
+
+    // public String getBus_user_id(){
+    //
+    // if(type.equals("Traiteur"))
+    // return "admin";
+    // else
+    // return "magasinier";
+    // }
 }

@@ -11,6 +11,9 @@ import javax.swing.JOptionPane;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
+import Entites.BusinessUser;
+import Entites.Client;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -130,6 +133,17 @@ public class Controller_admin {
     @FXML
     private TextField ville_client;
 
+    BusinessUser user = new BusinessUser();
+    Client client = new Client();
+
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* delete_user *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
+
     @FXML
     void delete_user(ActionEvent event) {
         try {
@@ -165,6 +179,14 @@ public class Controller_admin {
             JOptionPane.showMessageDialog(null, "Unable to delete record " + e.getMessage());
         }
     }
+
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* delete_client *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
 
     @FXML
     void delete_client(ActionEvent event) {
@@ -203,6 +225,13 @@ public class Controller_admin {
         }
     }
 
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* insert_user *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
     @FXML
     void insert_user(ActionEvent event) {
         try {
@@ -217,29 +246,168 @@ public class Controller_admin {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Unable to connect to database " + e.getMessage());
         }
-
         try {
             String sql;
-            sql = "insert into bus_user(login,bus_user_id,nom , prenom , role,num ,email , cin,password ,is_active) values ("
-                    + "'" + login_user.getText() + "',"
-                    + "'" + id_user.getText() + "',"
-                    + "'" + firstname_user.getText() + "',"
-                    + "'" + lastname_user.getText() + "',"
-                    + "'" + role_user.getText() + "',"
-                    + "'" + num_user.getText() + "',"
-                    + "'" + email_user.getText() + "',"
-                    + "'" + cin_user.getText() + "',"
-                    + "'" + password_user.getText() + "',"
-                    + "'" + active_user.getText()
-                    + "')";
+            sql = "select * from bus_user where login ='" + login_user.getText() + "'";
+            rs = stmt.executeQuery(sql);
+            if (!(rs.next())) {
+                try {
 
-            int result = stmt.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null, "record saved sucessfully ");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Unable to insert record " + e.getMessage());
+                    String sql1;
+                    sql1 = "insert into bus_user(login,bus_user_id,nom , prenom , role,num ,email , cin,password ,is_active) values ("
+                            + "'" + login_user.getText() + "',"
+                            + "'" + id_user.getText() + "',"
+                            + "'" + firstname_user.getText() + "',"
+                            + "'" + lastname_user.getText() + "',"
+                            + "'" + role_user.getText() + "',"
+                            + "'" + num_user.getText() + "',"
+                            + "'" + email_user.getText() + "',"
+                            + "'" + cin_user.getText() + "',"
+                            + "'" + password_user.getText() + "',"
+                            + "'" + active_user.getText()
+                            + "')";
+
+                    int result = stmt.executeUpdate(sql1);
+
+                    JOptionPane.showMessageDialog(null, "user saved sucessfully 1 ");
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Unable to insert 1 user " + e.getMessage());
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "user deja ");
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "unable to retrieve user " + e.getMessage());
         }
 
     }
+
+    /*
+     * @FXML
+     * void insert_user(ActionEvent event) {
+     * try {
+     * Class.forName("com.mysql.jdbc.Driver");
+     * } catch (ClassNotFoundException e) {
+     * JOptionPane.showMessageDialog(null, "Unable to register class 2 " +
+     * e.getMessage());
+     * }
+     * 
+     * try {
+     * con = (Connection)
+     * DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root",
+     * "");
+     * stmt = (Statement) con.createStatement();
+     * } catch (SQLException e) {
+     * JOptionPane.showMessageDialog(null, "Unable to connect to database 2 " +
+     * e.getMessage());
+     * }
+     * 
+     * try {
+     * 
+     * String sql;
+     * sql =
+     * "insert into bus_user(login,bus_user_id,nom , prenom , role,num ,email , cin,password ,is_active) values ("
+     * + "'" + login_user.getText() + "',"
+     * + "'" + id_user.getText() + "',"
+     * + "'" + firstname_user.getText() + "',"
+     * + "'" + lastname_user.getText() + "',"
+     * + "'" + role_user.getText() + "',"
+     * + "'" + num_user.getText() + "',"
+     * + "'" + email_user.getText() + "',"
+     * + "'" + cin_user.getText() + "',"
+     * + "'" + password_user.getText() + "',"
+     * + "'" + active_user.getText()
+     * + "')";
+     * 
+     * int result = stmt.executeUpdate(sql);
+     * 
+     * JOptionPane.showMessageDialog(null, "user saved sucessfully ");
+     * 
+     * } catch (Exception e) {
+     * JOptionPane.showMessageDialog(null, "Unable to insert 1 user " +
+     * e.getMessage());
+     * }
+     * // insert_role(login_user.getText(), role_user.getText());
+     * 
+     * }
+     */
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* verif compte *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
+
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* insert_role *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
+
+    private void insert_role(String Login, String role) {
+        System.out.println(Login + " " + role);
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Unable to register class 1 " + e.getMessage());
+        }
+
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+            stmt = (Statement) con.createStatement();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Unable to connect to database 2 " + e.getMessage());
+        }
+        int x = 0;
+        try {
+            System.out.println("bienvenu");
+
+            String sql, sql1;
+
+            sql1 = "select * from bus_user where login='" + Login + "'";
+            rs = stmt.executeQuery(sql1);
+            System.out.println(sql1);
+
+            while (rs.next()) {
+                String y = (rs.getString("id "));
+                x = Integer.parseInt(y);
+                System.out.println(x);
+            }
+
+            try {
+                System.out.println("bienvenu 2 ");
+                sql = "insert into bus_user_role(role_id ,user_role_id) values ("
+                        + "'" + role_user.getText() + "',"
+                        + "'" + x
+                        + "')";
+                System.out.println(x);
+                int result = stmt.executeUpdate(sql);
+                System.out.println("ok ");
+                JOptionPane.showMessageDialog(null, "role saved sucessfully 1 ");
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Unable to insert role 5  " + e.getMessage());
+            }
+
+            JOptionPane.showMessageDialog(null, "role saved sucessfully ");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Unable to insert role select  " + e.getMessage());
+        }
+
+    }
+
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* insert_client *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
 
     @FXML
     void insert_client(ActionEvent event) {
@@ -257,28 +425,51 @@ public class Controller_admin {
         }
 
         try {
+
             String sql;
-            sql = "insert into client(username,nom , prenom , gende,num ,email , id_ville,id_region,password ,is_active) values ("
-                    + "'" + login_client.getText() + "',"
+            sql = "select * from client where username ='" + login_client.getText() + "'";
+            rs = stmt.executeQuery(sql);
+            if (!(rs.next())) {
 
-                    + "'" + lastname_client.getText() + "',"
-                    + "'" + firstname_client.getText() + "',"
-                    + "'" + gende_client.getText() + "',"
-                    + "'" + num_client.getText() + "',"
-                    + "'" + email_client.getText() + "',"
-                    + "'" + ville_client.getText() + "',"
-                    + "'" + region_client.getText() + "',"
-                    + "'" + password_client.getText() + "',"
-                    + "'" + active_client.getText()
-                    + "')";
+                try {
+                    String sql1;
+                    sql1 = "insert into client(username,nom , prenom , gende,num ,email , id_ville,id_region,password ,is_active) values ("
+                            + "'" + login_client.getText() + "',"
+                            + "'" + lastname_client.getText() + "',"
+                            + "'" + firstname_client.getText() + "',"
+                            + "'" + gende_client.getText() + "',"
+                            + "'" + num_client.getText() + "',"
+                            + "'" + email_client.getText() + "',"
+                            + "'" + ville_client.getText() + "',"
+                            + "'" + region_client.getText() + "',"
+                            + "'" + password_client.getText() + "',"
+                            + "'" + active_client.getText()
+                            + "')";
 
-            int result = stmt.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null, "Client saved sucessfully ");
+                    int result = stmt.executeUpdate(sql1);
+                    JOptionPane.showMessageDialog(null, "Client saved sucessfully ");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Unable to insert record " + e.getMessage());
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "client deja ");
+
+            }
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Unable to insert record " + e.getMessage());
         }
 
     }
+
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* search_user *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
 
     @FXML
     void search_user(ActionEvent event) {
@@ -311,6 +502,14 @@ public class Controller_admin {
         }
 
     }
+
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* update_user *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
 
     @FXML
     void update_user(ActionEvent event) {
@@ -349,6 +548,13 @@ public class Controller_admin {
 
     }
 
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* update_client *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
     @FXML
     void update_client(ActionEvent event) {
         try {
@@ -386,6 +592,13 @@ public class Controller_admin {
 
     }
 
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* checkName_user *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
     private boolean checkName_user() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -411,6 +624,14 @@ public class Controller_admin {
         }
         return false;
     }
+
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* search_user *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
 
     private void search_user() {
         try {
@@ -452,6 +673,14 @@ public class Controller_admin {
         }
     }
 
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* checkName_client *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
+
     private boolean checkName_client() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -477,6 +706,14 @@ public class Controller_admin {
         }
         return false;
     }
+
+    /***************************************************************
+     * ***************************************************************
+     * ***************************************************************
+     * ********************* search_client *************************
+     * ***************************************************************
+     * ***************************************************************
+     ****************************************************************/
 
     private void search_client() {
         try {
