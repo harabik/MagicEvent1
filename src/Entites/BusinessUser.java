@@ -11,7 +11,7 @@ package Entites;
 public class BusinessUser {
 
     private int id; // default
-    private int id_user; // null
+    private String id_user; // null
     private String login; // not null
     private String password; // not null
     private String role; // not null
@@ -26,7 +26,7 @@ public class BusinessUser {
     public BusinessUser() {
     }
 
-    public BusinessUser(int id, int id_user, String login, String password, String role, String nom, String prenom,
+    public BusinessUser(int id, String id_user, String login, String password, String role, String nom, String prenom,
             String email, String num, String cin, String adresse, String active) {
         this.id = id;
         this.id_user = id_user;
@@ -50,11 +50,11 @@ public class BusinessUser {
         this.id = id;
     }
 
-    public int getId_user() {
+    public String getId_user() {
         return id_user;
     }
 
-    public void setId_user(int id_user) {
+    public void setId_user(String id_user) {
         this.id_user = id_user;
     }
 

@@ -1,11 +1,16 @@
 package Gui.Controllers;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+
+import javax.jws.soap.SOAPBinding.Use;
 import javax.swing.JOptionPane;
 
 import com.mysql.jdbc.Connection;
@@ -18,10 +23,53 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import java.net.URL;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.util.Callback;
+
 import javafx.scene.control.TextField;
 
-public class Controller_admin {
-
+public class Controller_admin implements Initializable {
     @FXML
     private Connection con;
 
@@ -30,6 +78,12 @@ public class Controller_admin {
 
     @FXML
     private ResultSet rs;
+
+    @FXML
+    private TableView<Client> ClientTable;
+
+    @FXML
+    private TableView<BusinessUser> UserTable;
 
     @FXML
     private TextField active_client;
@@ -44,7 +98,16 @@ public class Controller_admin {
     private Button delete_client;
 
     @FXML
+    private Button delete_client1;
+
+    @FXML
+    private Button delete_client11;
+
+    @FXML
     private Button delete_user;
+
+    @FXML
+    private TableColumn<BusinessUser, String> email;
 
     @FXML
     private TextField email_client;
@@ -62,7 +125,13 @@ public class Controller_admin {
     private TextField gende_client;
 
     @FXML
+    private TableColumn<BusinessUser, String> id;
+
+    @FXML
     private TextField id_user;
+
+    @FXML
+    private TableColumn<Client, String> idc;
 
     @FXML
     private Button insert_client;
@@ -83,16 +152,34 @@ public class Controller_admin {
     private Label lblStatus1;
 
     @FXML
+    private TableColumn<BusinessUser, String> login;
+
+    @FXML
     private TextField login_client;
 
     @FXML
     private TextField login_user;
 
     @FXML
+    private TableColumn<Client, String> loginc;
+
+    @FXML
+    private TableColumn<BusinessUser, String> nom;
+
+    @FXML
+    private TableColumn<Client, String> nomc;
+
+    @FXML
+    private TableColumn<BusinessUser, String> num;
+
+    @FXML
     private TextField num_client;
 
     @FXML
     private TextField num_user;
+
+    @FXML
+    private TableColumn<Client, String> numc;
 
     @FXML
     private TextField password1_client;
@@ -107,22 +194,28 @@ public class Controller_admin {
     private TextField password_user;
 
     @FXML
+    private TableColumn<BusinessUser, String> prenom;
+
+    @FXML
+    private TableColumn<Client, String> prenomc;
+
+    @FXML
     private TextField region_client;
 
     @FXML
     private TextField role_user;
 
     @FXML
+    private TableColumn<BusinessUser, String> role;
+
+    @FXML
+    private Button print;
+
+    @FXML
     private Button search_client;
 
     @FXML
     private Button search_user;
-
-    @FXML
-    private TableView<?> tblData;
-
-    @FXML
-    private TableView<?> tblData1;
 
     @FXML
     private Button update_client;
@@ -133,7 +226,9 @@ public class Controller_admin {
     @FXML
     private TextField ville_client;
 
-    BusinessUser user = new BusinessUser();
+    /***************** */
+
+    // BusinessUser user = new BusinessUser();
     Client client = new Client();
 
     /***************************************************************
@@ -671,6 +766,10 @@ public class Controller_admin {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Unable to retrieve record " + e.getMessage());
         }
+
+    }
+
+    private void clearFields() {
     }
 
     /***************************************************************
@@ -754,6 +853,315 @@ public class Controller_admin {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Unable to retrieve record " + e.getMessage());
         }
+    }
+
+    private void affich_client() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Unable to register class " + e.getMessage());
+        }
+
+        try {
+            // con = DriverManager.getConnection("jdbc:mysql://localhost/smartevent01",
+            // "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+            stmt = (Statement) con.createStatement();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Unable to connect to database " + e.getMessage());
+        }
+
+        try {
+            String sql;
+            sql = "select *  from client ";
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                client.setId(Integer.parseInt(rs.getString("id")));
+                client.setUsername((rs.getString("username")));
+                client.setNom(rs.getString("nom"));
+                client.setPrenom(rs.getString("prenom"));
+                client.setGende(rs.getString("gende"));
+                client.setNum(rs.getString("num"));
+                client.setEmail(rs.getString("email"));
+                client.setId_ville(rs.getString("id_ville"));
+                client.setId_region(rs.getString("id_region"));
+                client.setPassword(rs.getString("password"));
+                client.setActive(rs.getString("is_active"));
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Unable to affich List for Client  " + e.getMessage());
+        }
+    }
+    /*
+     * private ObservableList<ObservableList> data;
+     * String SQL = "SELECT * from bus_user";
+     * 
+     * // only fetch columns
+     * public void fetColumnList() {
+     * 
+     * try {
+     * con = (Connection)
+     * DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root",
+     * "");
+     * stmt = (Statement) con.createStatement();
+     * // rs = stmt.executeQuery(SQL);
+     * // int result = stmt.executeUpdate(sql);
+     * ResultSet rs = stmt.executeQuery(SQL);
+     * 
+     * // SQL FOR SELECTING ALL OF CUSTOMER
+     * for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
+     * // We are using non property style for making dynamic table
+     * final int j = i;
+     * TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i +
+     * 1).toUpperCase());
+     * col.setCellValueFactory(
+     * new Callback<CellDataFeatures<ObservableList, String>,
+     * ObservableValue<String>>() {
+     * public ObservableValue<String> call(CellDataFeatures<ObservableList, String>
+     * param) {
+     * 
+     * return new SimpleStringProperty(param.getValue().get(j).toString());
+     * }
+     * });
+     * 
+     * // tblData.getColumns().removeAll(col);
+     * tblData.getColumns().addAll(col);
+     * 
+     * System.out.println("Column [" + i + "] ");
+     * 
+     * }
+     * 
+     * } catch (Exception e) {
+     * System.out.println("Error " + e.getMessage());
+     * 
+     * }
+     * }
+     * 
+     * // fetches rows and data from the list
+     * public void fetRowList() {
+     * data = FXCollections.observableArrayList();
+     * ResultSet rs;
+     * List list = new LinkedList();
+     * try {
+     * con = (Connection)
+     * DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root",
+     * "");
+     * stmt = (Statement) con.createStatement();
+     * // rs = stmt.executeQuery(sql);
+     * rs = stmt.executeQuery(SQL);
+     * 
+     * while (rs.next()) {
+     * // Iterate Row
+     * ObservableList row = FXCollections.observableArrayList();
+     * for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+     * // Iterate Column
+     * row.add(rs.getString(i));
+     * 
+     * }
+     * System.out.println("Row [1] added " + row);
+     * data.add(row);
+     * 
+     * 
+     * }
+     * tblData.getItems(data);
+     * System.out.println(data);
+     * // tblData.getItems().setAll(ObservableList<user>);
+     * } catch (SQLException ex) {
+     * System.err.println(ex.getMessage());
+     * }
+     * }
+     * 
+     * @Override
+     * public void initialize(URL location, ResourceBundle resources) {
+     * // TODO Auto-generated method stub
+     * // fetColumnList();
+     * // fetRowList();
+     * 
+     * // fetRowList();
+     * // fetColumnList();
+     * // clearFields();
+     * }
+     */
+
+    String query = null;
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    ResultSet resultSet = null;
+    BusinessUser user = null;
+    // BusinessUser user = new BusinessUser()
+    ObservableList<BusinessUser> UserList = FXCollections.observableArrayList();
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        loadDate();
+    }
+
+    @FXML
+    private void refreshTable() {
+        try {
+            UserList.clear();
+
+            query = "SELECT * FROM `bus_user`";
+
+            preparedStatement = (PreparedStatement) connection.prepareStatement(query);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                UserList.add(new BusinessUser(
+
+                        resultSet.getInt("id"),
+                        resultSet.getString("bus_user_id"),
+                        resultSet.getString("login"),
+                        resultSet.getString("password"),
+                        resultSet.getString("role"),
+                        resultSet.getString("nom"),
+                        resultSet.getString("prenom"),
+                        resultSet.getString("email"),
+                        resultSet.getString("num"),
+                        resultSet.getString("cin"),
+                        resultSet.getString("adresse"),
+                        resultSet.getString("is_active")));
+                UserTable.setItems(UserList);
+
+            }
+
+        } catch (SQLException ex) {
+            // Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null,
+            // ex);
+            JOptionPane.showMessageDialog(null, " list  " + ex.getMessage());
+
+        }
+
+    }
+
+    @FXML
+    private void print(MouseEvent event) {
+    }
+
+    private void loadDate() {
+
+        try {
+            connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        ;
+
+        refreshTable();
+
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        login.setCellValueFactory(new PropertyValueFactory<>("login"));
+        nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        role.setCellValueFactory(new PropertyValueFactory<>("role"));
+        num.setCellValueFactory(new PropertyValueFactory<>("num"));
+        email.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+        // add cell of button edit
+        Callback<TableColumn<BusinessUser, String>, TableCell<BusinessUser, String>> cellFoctory = (
+                TableColumn<BusinessUser, String> param) -> {
+            // make cell containing buttons
+            final TableCell<BusinessUser, String> cell = new TableCell<BusinessUser, String>() {
+                @Override
+                public void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty);
+                    // that cell created only on non-empty rows
+                    if (empty) {
+                        setGraphic(null);
+                        setText(null);
+
+                    }
+                    /*
+                     * else {
+                     * 
+                     * FontAwesomeIconView deleteIcon = new
+                     * FontAwesomeIconView(FontAwesomeIcon.TRASH);
+                     * FontAwesomeIconView editIcon = new
+                     * FontAwesomeIconView(FontAwesomeIcon.PENCIL_SQUARE);
+                     * 
+                     * deleteIcon.setStyle(
+                     * " -fx-cursor: hand ;"
+                     * + "-glyph-size:28px;"
+                     * + "-fx-fill:#ff1744;"
+                     * );
+                     * editIcon.setStyle(
+                     * " -fx-cursor: hand ;"
+                     * + "-glyph-size:28px;"
+                     * + "-fx-fill:#00E676;"
+                     * );
+                     * deleteIcon.setOnMouseClicked((MouseEvent event) -> {
+                     * 
+                     * try {
+                     * student = UserTable.getSelectionModel().getSelectedItem();
+                     * query = "DELETE FROM `student` WHERE id  ="+student.getId();
+                     * connection = DbConnect.getConnect();
+                     * preparedStatement = connection.prepareStatement(query);
+                     * preparedStatement.execute();
+                     * refreshTable();
+                     * 
+                     * } catch (SQLException ex) {
+                     * Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null,
+                     * ex);
+                     * }
+                     * 
+                     * 
+                     * 
+                     * 
+                     * 
+                     * });
+                     * editIcon.setOnMouseClicked((MouseEvent event) -> {
+                     * 
+                     * student = UserTable.getSelectionModel().getSelectedItem();
+                     * FXMLLoader loader = new FXMLLoader ();
+                     * loader.setLocation(getClass().getResource("/tableView/addStudent.fxml"));
+                     * try {
+                     * loader.load();
+                     * } catch (IOException ex) {
+                     * Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null,
+                     * ex);
+                     * }
+                     * 
+                     * AddStudentController addStudentController = loader.getController();
+                     * addStudentController.setUpdate(true);
+                     * addStudentController.setTextField(student.getId(), student.getName(),
+                     * student.getBirth().toLocalDate(),student.getAdress(), student.getEmail());
+                     * Parent parent = loader.getRoot();
+                     * Stage stage = new Stage();
+                     * stage.setScene(new Scene(parent));
+                     * stage.initStyle(StageStyle.UTILITY);
+                     * stage.show();
+                     * 
+                     * 
+                     * 
+                     * 
+                     * });
+                     * 
+                     * HBox managebtn = new HBox(editIcon, deleteIcon);
+                     * managebtn.setStyle("-fx-alignment:center");
+                     * HBox.setMargin(deleteIcon, new Insets(2, 2, 0, 3));
+                     * HBox.setMargin(editIcon, new Insets(2, 3, 0, 2));
+                     * 
+                     * setGraphic(managebtn);
+                     * 
+                     * setText(null);
+                     * 
+                     * }
+                     */
+                }
+
+            };
+
+            return cell;
+        };
+        // editCol.setCellFactory(cellFoctory);
+        UserTable.setItems(UserList);
+
     }
 
 }
