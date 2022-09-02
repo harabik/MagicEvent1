@@ -81,6 +81,7 @@ public class LoginBusinessUserController {
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
+
 // compte Traiteur
             if (x.equals("1")) {
                 System.out.println(user.getRole());
@@ -125,10 +126,13 @@ public class LoginBusinessUserController {
                 stage.show();
 // compte animateur
 
+
             } else if (x.equals("6")) {
                 System.out.println(user.getRole());
 
+
                 Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/GestionCompteAnimateur.fxml"));
+
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();

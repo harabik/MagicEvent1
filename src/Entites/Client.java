@@ -4,6 +4,11 @@
  */
 package Entites;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import Gui.Controllers.Controller_admin;
+
 /**
  *
  * @author Admin
@@ -21,8 +26,25 @@ public class Client {
     private String gende; // not null
     private String id_ville; // not null
     private String id_region; // not null
+    private String active; // not null
 
     public Client() {
+    }
+
+    public Client(int id, String username, String password, String prenom, String nom, String num, String adress,
+            String email, String gende, String id_ville, String id_region, String active) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.prenom = prenom;
+        this.nom = nom;
+        this.num = num;
+        this.adress = adress;
+        this.email = email;
+        this.gende = gende;
+        this.id_ville = id_ville;
+        this.id_region = id_region;
+        this.active = active;
     }
 
     public Client(int id, String username, String password, String prenom, String nom, String num, String adress,
@@ -138,6 +160,14 @@ public class Client {
         return "Client [adress=" + adress + ", email=" + email + ", gende=" + gende + ", id=" + id + ", id_region="
                 + id_region + ", id_ville=" + id_ville + ", nom=" + nom + ", num=" + num + ", password=" + password
                 + ", prenom=" + prenom + ", username=" + username + "]";
+    }
+
+    public String getActive() {
+        return active;
+    }
+
+    public void setActive(String active) {
+        this.active = active;
     }
 
 }
