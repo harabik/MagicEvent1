@@ -19,9 +19,10 @@ public class MagicEventMainFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        // Parent root =
-        // FXMLLoader.load(getClass().getResource("../Gui/Views/Home.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/admin.fxml"));
+
+        //Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Home.fxml"));
+
+
         // Parent root =
         // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteLocationMateriel.fxml"));
         // Parent root =
@@ -35,11 +36,11 @@ public class MagicEventMainFX extends Application {
         // Parent root =
         // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteS.fxml"));
         // Parent root =
-        // FXMLLoader.load(getClass().getResource("../Gui/Views/Sigupclient.fxml"));
+//         Parent root =FXMLLoader.load(getClass().getResource("../Gui/Views/Sigupclient.fxml"));
         // Parent root =
         // FXMLLoader.load(getClass().getResource("../Gui/Views/login.fxml"));
-        // Parent root =
-        // FXMLLoader.load(getClass().getResource("../Gui/Views/SignupBusinessUsers.fxml"));
+        Parent root =
+         FXMLLoader.load(getClass().getResource("../Gui/Views/SignupBusinessUsers.fxml"));
         // Parent root =
         // FXMLLoader.load(getClass().getResource("../Gui/Views/CreationEvent.fxml"));
         // Parent root =

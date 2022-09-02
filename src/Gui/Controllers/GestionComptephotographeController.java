@@ -47,7 +47,7 @@ public class GestionComptephotographeController implements Initializable {
     private Button Edit;
     
     @FXML
-    private Button Reset;
+    private Button Close;
 
     @FXML
     private ListView<File> LvFiles;
@@ -110,13 +110,16 @@ public class GestionComptephotographeController implements Initializable {
             }
         }
     }
-public void goToHom(ActionEvent event) throws IOException {
-        
-        root = FXMLLoader.load(getClass().getResource("../Views/Home.fxml"));
+      @FXML
+    void GoToHome(ActionEvent event) throws IOException {
+     root = FXMLLoader.load(getClass().getResource("../Views/Home.fxml"));
         scene = new Scene(root);
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-    
-}
-}
+
+    }
+    }
+
+
+        
