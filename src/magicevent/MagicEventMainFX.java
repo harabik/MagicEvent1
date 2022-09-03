@@ -17,6 +17,9 @@ import javafx.stage.Stage;
  */
 public class MagicEventMainFX extends Application {
 
+        // Parent root =
+        // FXMLLoader.load(getClass().getResource("../Gui/Views/Home.fxml"));
+
         @Override
         public void start(Stage primaryStage) throws IOException {
 

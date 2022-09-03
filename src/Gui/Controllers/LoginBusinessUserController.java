@@ -83,6 +83,9 @@ public class LoginBusinessUserController {
             stage.close();
 
             // compte Traiteur
+
+            // compte Traiteur
+
             if (x.equals("1")) {
                 System.out.println(user.getRole());
 
@@ -124,6 +127,9 @@ public class LoginBusinessUserController {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+
+                // compte animateur
+
                 // compte animateur
 
             } else if (x.equals("6")) {

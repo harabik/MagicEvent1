@@ -238,7 +238,7 @@
                            </children>
                         </Pane>
 
-                        <TableView fx:id="ClientTable" layoutX="460.0" layoutY="32.0" prefHeight="412.0" prefWidth="481.0">
+                        <TableView fx:id="ClientTable" layoutX="460.0" layoutY="32.0" onMouseClicked="#Tableclicked_client" prefHeight="412.0" prefWidth="481.0">
 
                            <columns>
                               <TableColumn fx:id="idc" maxWidth="70.0" prefWidth="49.0" style="-fx-alignment: center;" text="ID" />
