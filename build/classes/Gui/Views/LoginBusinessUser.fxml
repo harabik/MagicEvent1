@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controllers.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controllers.LoginBusinessUserController">
    <left>
       <AnchorPane prefHeight="500.0" prefWidth="324.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
          <children>
@@ -25,8 +25,8 @@
    <center>
       <AnchorPane prefHeight="500.0" prefWidth="369.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="bus_user_id" layoutX="114.0" layoutY="213.0" prefHeight="25.0" prefWidth="160.0" promptText="bus_user_id" />
-            <PasswordField fx:id="cin" layoutX="116.0" layoutY="275.0" prefHeight="25.0" prefWidth="156.0" promptText="cin" />
+            <TextField fx:id="Login" layoutX="114.0" layoutY="213.0" prefHeight="25.0" prefWidth="160.0" promptText="Login" />
+            <PasswordField fx:id="password" layoutX="116.0" layoutY="275.0" prefHeight="25.0" prefWidth="156.0" promptText="password" />
             <ImageView fitHeight="94.0" fitWidth="200.0" layoutX="70.0" layoutY="85.0" pickOnBounds="true">
                <image>
                   <Image url="@../images/magicevent.png" />

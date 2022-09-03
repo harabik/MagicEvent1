@@ -20,23 +20,24 @@
       <TextField fx:id="FirstName" layoutX="471.0" layoutY="100.0" prefHeight="25.0" prefWidth="178.0" promptText="First Name" />
       <TextField fx:id="Email" layoutX="219.0" layoutY="167.0" prefHeight="25.0" prefWidth="178.0" promptText="Email" />
       <TextField fx:id="Phone" layoutX="471.0" layoutY="167.0" prefHeight="25.0" prefWidth="178.0" promptText="Phone" />
-      <TextField fx:id="Login" layoutX="219.0" layoutY="238.0" prefHeight="25.0" prefWidth="178.0" promptText="Login" />
-      <TextField layoutX="219.0" layoutY="289.0" prefHeight="25.0" prefWidth="178.0" promptText="Adress" />
+      <TextField fx:id="UserName" layoutX="219.0" layoutY="238.0" prefHeight="25.0" prefWidth="178.0" promptText="User Name" />
+      <TextField fx:id="Adress" layoutX="219.0" layoutY="303.0" prefHeight="25.0" prefWidth="178.0" promptText="Adress" />
       <PasswordField fx:id="Password" layoutX="471.0" layoutY="238.0" prefHeight="25.0" prefWidth="178.0" promptText="Password" />
-      <Button fx:id="Register" layoutX="372.0" layoutY="332.0" mnemonicParsing="false" onAction="#goToCreationEvent" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" text="Register">
+      <Button fx:id="Register" layoutX="388.0" layoutY="358.0" mnemonicParsing="false" onAction="#goToCreationEvent" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" text="Register">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="BusinessUsers" layoutX="519.0" layoutY="394.0" mnemonicParsing="false" onAction="#goToSignupBusinessUsers" prefHeight="39.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" text="Business Users">
+      <Button fx:id="BusinessUsers" layoutX="535.0" layoutY="420.0" mnemonicParsing="false" onAction="#goToSignupBusinessUsers" prefHeight="39.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" text="Business Users">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="Reset" layoutX="218.0" layoutY="394.0" mnemonicParsing="false" onAction="#goTologin" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" text="Reset">
+      <Button fx:id="Reset" layoutX="234.0" layoutY="420.0" mnemonicParsing="false" onAction="#goTologin" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" text="Reset">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
+      <TextField fx:id="Gende" layoutX="471.0" layoutY="303.0" prefHeight="25.0" prefWidth="178.0" promptText=" Gende :M or F" />
    </children>
 </AnchorPane>

@@ -82,46 +82,55 @@ public class LoginBusinessUserController {
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
 
+            // compte Traiteur
             if (x.equals("1")) {
                 System.out.println(user.getRole());
 
-                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/admin.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/GestionCompteTraiteur.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+                // compte location materiel
             } else if (x.equals("2")) {
                 System.out.println(user.getRole());
 
-                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/admin.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/GestionCompteLocationMateriel.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+                // compte Espace
             } else if (x.equals("3")) {
                 System.out.println(user.getRole());
 
-                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/admin.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/GestionCompteEspace.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+                // compte serveur
+
             } else if (x.equals("4")) {
                 System.out.println(user.getRole());
 
-                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/admin.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/GestionCompteS.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+                // compte photograohe
+
             } else if (x.equals("5")) {
                 System.out.println(user.getRole());
 
-                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/admin.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/GestionComptephotographe.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+                // compte animateur
 
             } else if (x.equals("6")) {
                 System.out.println(user.getRole());
 
-                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/admin.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/GestionCompteAnimateur.fxml"));
+
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();

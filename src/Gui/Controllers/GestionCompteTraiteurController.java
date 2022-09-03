@@ -34,7 +34,7 @@ public class GestionCompteTraiteurController implements Initializable {
      private Scene scene;
 
     final FileChooser fc = new FileChooser();
-    @FXML
+     @FXML
     private Button AddFiles;
 
     @FXML
@@ -42,8 +42,9 @@ public class GestionCompteTraiteurController implements Initializable {
 
     @FXML
     private TextField Adress;
-      @FXML
-    private Button Reset;
+
+    @FXML
+    private Button Close;
 
     @FXML
     private Button Edit;
@@ -59,7 +60,11 @@ public class GestionCompteTraiteurController implements Initializable {
 
     @FXML
     private TextField email;
-        @FXML
+
+    @FXML
+    private TextField lastNameFirstName;
+
+    @FXML
     private TextArea tacv;
 
     /**
@@ -70,15 +75,16 @@ public class GestionCompteTraiteurController implements Initializable {
         // TODO
     }
 
-    public void goToHom(ActionEvent event) throws IOException {
-        
-        root = FXMLLoader.load(getClass().getResource("../Views/Home.fxml"));
+     @FXML
+    void GoToHome(ActionEvent event) throws IOException {
+     root = FXMLLoader.load(getClass().getResource("../Views/Home.fxml"));
         scene = new Scene(root);
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
 
     }
+    
     @FXML
     private void handleAddcv(ActionEvent event) {
         //setthe title
