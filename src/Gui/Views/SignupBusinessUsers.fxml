@@ -16,23 +16,24 @@
             <Font name="Arial Black" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="LastName" layoutX="219.0" layoutY="100.0" prefHeight="25.0" prefWidth="178.0" promptText="Last Name" />
-      <TextField fx:id="FirstName" layoutX="471.0" layoutY="100.0" prefHeight="25.0" prefWidth="178.0" promptText="First Name" />
-      <TextField fx:id="Email" layoutX="219.0" layoutY="237.0" prefHeight="25.0" prefWidth="178.0" promptText="Email" />
-      <TextField fx:id="Phone" layoutX="471.0" layoutY="238.0" prefHeight="25.0" prefWidth="178.0" promptText="Phone" />
+      <TextField fx:id="LastName" layoutX="225.0" layoutY="99.0" prefHeight="25.0" prefWidth="178.0" promptText="Last Name" />
+      <TextField fx:id="FirstName" layoutX="471.0" layoutY="99.0" prefHeight="25.0" prefWidth="178.0" promptText="First Name" />
+      <TextField fx:id="Email" layoutX="225.0" layoutY="225.0" prefHeight="25.0" prefWidth="178.0" promptText="Email" />
+      <TextField fx:id="Phone" layoutX="471.0" layoutY="225.0" prefHeight="25.0" prefWidth="178.0" promptText="Phone" />
       <TextField fx:id="Login" layoutX="225.0" layoutY="167.0" prefHeight="25.0" prefWidth="178.0" promptText="Login" />
-      <TextField layoutX="219.0" layoutY="289.0" prefHeight="25.0" prefWidth="178.0" promptText="Adress" />
-      <Button fx:id="Register" layoutX="372.0" layoutY="332.0" mnemonicParsing="false" onAction="#goToGestionCompte" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" text="Register">
+      <TextField fx:id="Adress" layoutX="223.0" layoutY="281.0" prefHeight="25.0" prefWidth="178.0" promptText="Adress" />
+      <Button fx:id="Register" layoutX="379.0" layoutY="381.0" mnemonicParsing="false" onAction="#goToGestionCompte" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" text="Register">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="Reset" layoutX="218.0" layoutY="394.0" mnemonicParsing="false" onAction="#goToSigupclient" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" text="Reset">
+      <Button fx:id="Reset" layoutX="218.0" layoutY="427.0" mnemonicParsing="false" onAction="#goToSigupclient" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" text="Reset">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
       <PasswordField fx:id="Password" layoutX="471.0" layoutY="167.0" prefHeight="25.0" prefWidth="178.0" promptText="Password" />
-      <TextField fx:id="Phone1" layoutX="471.0" layoutY="289.0" prefHeight="25.0" prefWidth="178.0" promptText="Role" />
+      <TextField fx:id="Role" layoutX="469.0" layoutY="280.0" prefHeight="25.0" prefWidth="178.0" promptText="Role" />
+      <TextField fx:id="cin" layoutX="225.0" layoutY="333.0" prefHeight="25.0" prefWidth="178.0" promptText="Cin" />
    </children>
 </AnchorPane>

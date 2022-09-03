@@ -5,17 +5,23 @@
 package Gui.Controllers;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -23,10 +29,12 @@ import javafx.stage.FileChooser;
  * @author Admin
  */
 public class GestionCompteEspaceController implements Initializable {
-
+     private Parent root;
+     private Stage stage;
+     private Scene scene;
 
     final FileChooser fc = new FileChooser();
-    @FXML
+     @FXML
     private Button AddFiles;
 
     @FXML
@@ -34,6 +42,9 @@ public class GestionCompteEspaceController implements Initializable {
 
     @FXML
     private TextField Adress;
+
+    @FXML
+    private Button Close;
 
     @FXML
     private Button Edit;
@@ -49,7 +60,11 @@ public class GestionCompteEspaceController implements Initializable {
 
     @FXML
     private TextField email;
-        @FXML
+
+    @FXML
+    private TextField lastNameFirstName;
+
+    @FXML
     private TextArea tacv;
 
     /**
@@ -60,6 +75,16 @@ public class GestionCompteEspaceController implements Initializable {
         // TODO
     }
 
+     @FXML
+    void GoToHome(ActionEvent event) throws IOException {
+     root = FXMLLoader.load(getClass().getResource("../Views/Home.fxml"));
+        scene = new Scene(root);
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+
+    }
+    
     @FXML
     private void handleAddcv(ActionEvent event) {
         //setthe title

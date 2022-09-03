@@ -32,19 +32,27 @@ public class LoginController implements Initializable {
     private Parent root;
     private Stage stage;
     private Scene scene;
+    @FXML
+    private Button BUsers;
+
+    @FXML
+    private Hyperlink Signup;
+
+    @FXML
+    private Button connecte;
+
+    @FXML
+    private Label loginmessage;
+
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private Button reset;
 
     @FXML
     private TextField username;
-    @FXML
-    private PasswordField password;
-    @FXML
-    private Button Login;
-    @FXML
-    private Button BusinessUsers;
-    @FXML
-    private Hyperlink Signup;
-       @FXML
-    private Label loginmessage;
+
 
     /**
      * Initializes the controller class.
@@ -56,7 +64,7 @@ public class LoginController implements Initializable {
     Client user = new Client();
     ControlLogin pc= new ControlLogin();
     @FXML
-   private void goTocreationevent(ActionEvent event) throws IOException {
+    void goTocreationevent(ActionEvent event) throws IOException{
         
         user.setUsername(username.getText());
         user.setPassword(password.getText());
@@ -74,16 +82,18 @@ public class LoginController implements Initializable {
            else
                loginmessage.setText("Invalid Login .Please try again.");
     }
-
-    @FXML
-    private void goToBusinessUsers(ActionEvent event) throws IOException {
+//LoginBusinessUser
+      @FXML
+    void goToBUsers(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("../Views/LoginBusinessUser.fxml"));
         scene = new Scene(root);
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+
     }
-      @FXML
+     
+    @FXML
     void goToHome(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("../Views/Home.fxml"));
         scene = new Scene(root);
@@ -93,9 +103,8 @@ public class LoginController implements Initializable {
 
     }
 
-
-    @FXML
-    private void goToSigupclient(ActionEvent event) throws IOException {
+     @FXML
+    void goToSigupclient(ActionEvent event) throws IOException {
          root = FXMLLoader.load(getClass().getResource("../Views/Sigupclient.fxml"));
         scene = new Scene(root);
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
