@@ -4,12 +4,13 @@
  */
 package magicevent;
 
-import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  *
@@ -39,8 +40,7 @@ public class MagicEventMainFX extends Application {
 //         Parent root =FXMLLoader.load(getClass().getResource("../Gui/Views/Sigupclient.fxml"));
         // Parent root =
         // FXMLLoader.load(getClass().getResource("../Gui/Views/login.fxml"));
-        Parent root =
-         FXMLLoader.load(getClass().getResource("../Gui/Views/SignupBusinessUsers.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Liste_Traiteur.fxml"));
         // Parent root =
         // FXMLLoader.load(getClass().getResource("../Gui/Views/CreationEvent.fxml"));
         // Parent root =
