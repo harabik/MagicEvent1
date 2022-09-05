@@ -112,4 +112,11 @@ public class Traiteur {
         this.login = login;
     }
 
+    @Override
+    public String toString() {
+        return "Traiteur{" + "id=" + id + ", num=" + num + ", nom=" + nom + ", login=" + login + ", prenom=" + prenom + ", password=" + password + ", cin=" + cin + ", adress=" + adress + ", email=" + email + '}';
+    }
+    
+    // this is a comment
+
 }
