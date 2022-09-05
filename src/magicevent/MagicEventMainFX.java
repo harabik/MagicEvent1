@@ -18,12 +18,16 @@ import java.io.IOException;
  */
 public class MagicEventMainFX extends Application {
 
-    @Override
-    public void start(Stage primaryStage) throws IOException {
+        // Parent root =
+        // FXMLLoader.load(getClass().getResource("../Gui/Views/Home.fxml"));
 
-        //Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Home.fxml"));
+        @Override
+        public void start(Stage primaryStage) throws IOException {
 
+                // Parent root =
+                // FXMLLoader.load(getClass().getResource("../Gui/Views/Home.fxml"));
 
+<<<<<<< HEAD
         // Parent root =
         // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteLocationMateriel.fxml"));
         // Parent root =
@@ -49,14 +53,42 @@ public class MagicEventMainFX extends Application {
         primaryStage.setTitle("MagicEvent");
         primaryStage.setScene(scene);
         primaryStage.show();
+=======
+                // Parent root =
+                // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteLocationMateriel.fxml"));
+                // Parent root =
+                // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteEspace.fxml"));
+                // Parent root =
+                // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionComptephotographe.fxml"));
+                // Parent root =
+                // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteAnimateur.fxml"));
+                // Parent root =
+                // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteTraiteur.fxml"));
+                // Parent root =
+                // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteS.fxml"));
+                // Parent root =
+                // Parent root
+                // =FXMLLoader.load(getClass().getResource("../Gui/Views/Sigupclient.fxml"));
+                // Parent root =
+                // FXMLLoader.load(getClass().getResource("../Gui/Views/login.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/admin.fxml"));
+                // Parent root =
+                // FXMLLoader.load(getClass().getResource("../Gui/Views/CreationEvent.fxml"));
+                // Parent root =
+                // FXMLLoader.load(getClass().getResource("../Gui/Views/Validevent.fxml"));
+                Scene scene = new Scene(root);
+                primaryStage.setTitle("MagicEvent");
+                primaryStage.setScene(scene);
+                primaryStage.show();
+>>>>>>> b381806be604a864b56032e724f45c9fc8f15eba
 
-    }
+        }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
+        /**
+         * @param args the command line arguments
+         */
+        public static void main(String[] args) {
+                launch(args);
+        }
 
 }

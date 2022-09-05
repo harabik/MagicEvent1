@@ -119,7 +119,7 @@ public class GestionCompteAnimateurController implements Initializable {
                 LvFiles.getItems().add(files.get(i));
                 
             } else {
-                System.out.println(" file is invalid!");
+                System.out.println(" fichier non trouver");
 
             }
         }

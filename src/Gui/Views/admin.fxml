@@ -131,7 +131,7 @@
                         </Label>
                         <TextField id="id_user" fx:id="id_user" layoutX="128.0" layoutY="113.0" opacity="0.72" prefHeight="25.0" prefWidth="160.0" />
                         <TextField id="cin" fx:id="cin_user" layoutX="127.0" layoutY="299.0" opacity="0.72" prefHeight="25.0" prefWidth="160.0" />
-                        <TableView fx:id="UserTable" layoutX="453.0" layoutY="45.0" prefHeight="409.0" prefWidth="492.0">
+                        <TableView fx:id="UserTable" layoutX="453.0" layoutY="45.0" onMouseClicked="#Tableclicked_user" prefHeight="409.0" prefWidth="492.0">
                            <columns>
                               <TableColumn fx:id="id" prefWidth="41.0" text="ID" />
                               <TableColumn fx:id="login" prefWidth="77.0" text="LOGIN" />
@@ -238,7 +238,7 @@
                            </children>
                         </Pane>
 
-                        <TableView fx:id="ClientTable" layoutX="460.0" layoutY="32.0" prefHeight="412.0" prefWidth="481.0">
+                        <TableView fx:id="ClientTable" layoutX="460.0" layoutY="32.0" onMouseClicked="#Tableclicked_client" prefHeight="412.0" prefWidth="481.0">
 
                            <columns>
                               <TableColumn fx:id="idc" maxWidth="70.0" prefWidth="49.0" style="-fx-alignment: center;" text="ID" />

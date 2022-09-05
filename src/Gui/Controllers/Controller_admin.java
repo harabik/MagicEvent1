@@ -1286,4 +1286,74 @@ public class Controller_admin implements Initializable {
 
     }
 
+    @FXML
+    void Tableclicked_user() {
+        BusinessUser user = UserTable.getSelectionModel().getSelectedItem();
+        String sql = "SELECT * FROM `bus_user` where id = '" + user.getId() + "'";
+        System.out.println(user);
+        System.out.println(user.getId());
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+            stmt = (Statement) con.prepareStatement(sql);
+
+            resultSet = stmt.executeQuery(sql);
+            if (resultSet.next()) {
+                System.out.println("bienvenu");
+                login_user.setText(resultSet.getString("login"));
+                id_user.setText(resultSet.getString("bus_user_id"));
+                firstname_user.setText(resultSet.getString("nom"));
+                lastname_user.setText(resultSet.getString("prenom"));
+                role_user.setText(resultSet.getString("role"));
+                num_user.setText(resultSet.getString("num"));
+                email_user.setText(resultSet.getString("email"));
+                cin_user.setText(resultSet.getString("cin"));
+                password_user.setText(resultSet.getString("password"));
+                password1_user.setText(resultSet.getString("password"));
+                active_user.setText(resultSet.getString("is_active"));
+
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void Tableclicked_client() {
+
+        Client client = ClientTable.getSelectionModel().getSelectedItem();
+        String sql = "SELECT * FROM `client` where id = '" + client.getId() + "'";
+        System.out.println(client);
+        System.out.println(client.getId());
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+            stmt = (Statement) con.prepareStatement(sql);
+
+            resultSet = stmt.executeQuery(sql);
+            if (resultSet.next()) {
+
+                login_client.setText(resultSet.getString("username"));
+
+                firstname_client.setText(resultSet.getString("nom"));
+                lastname_client.setText(resultSet.getString("prenom"));
+                gende_client.setText(resultSet.getString("gende"));
+                num_client.setText(resultSet.getString("num"));
+                email_client.setText(resultSet.getString("email"));
+                ville_client.setText(resultSet.getString("id_ville"));
+                region_client.setText(resultSet.getString("id_region"));
+                password_client.setText(resultSet.getString("password"));
+                password1_client.setText(resultSet.getString("password"));
+                active_client.setText(resultSet.getString("is_active"));
+
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
 }
