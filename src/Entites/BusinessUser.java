@@ -138,4 +138,9 @@ public class BusinessUser {
         this.active = active;
     }
 
+    @Override
+    public String toString() {
+        return "BusinessUser{" + "id=" + id + ", id_user=" + id_user + ", login=" + login + ", password=" + password + ", role=" + role + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", num=" + num + ", cin=" + cin + ", adresse=" + adresse + ", active=" + active + '}';
+    }
+
 }

@@ -37,10 +37,10 @@ public class MagicEventMainFX extends Application {
         // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteS.fxml"));
         // Parent root =
 //         Parent root =FXMLLoader.load(getClass().getResource("../Gui/Views/Sigupclient.fxml"));
-        // Parent root =
-        // FXMLLoader.load(getClass().getResource("../Gui/Views/login.fxml"));
-        Parent root =
-         FXMLLoader.load(getClass().getResource("../Gui/Views/SignupBusinessUsers.fxml"));
+         Parent root =
+         FXMLLoader.load(getClass().getResource("../Gui/Views/login.fxml"));
+        //Parent root =
+        // FXMLLoader.load(getClass().getResource("../Gui/Views/SignupBusinessUsers.fxml"));
         // Parent root =
         // FXMLLoader.load(getClass().getResource("../Gui/Views/CreationEvent.fxml"));
         // Parent root =
