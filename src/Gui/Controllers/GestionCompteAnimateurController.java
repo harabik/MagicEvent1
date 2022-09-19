@@ -28,6 +28,7 @@ import javafx.stage.Stage;
  *
  * @author Admin
  */
+//kh
 public class GestionCompteAnimateurController implements Initializable {
      private Parent root;
      private Stage stage;
