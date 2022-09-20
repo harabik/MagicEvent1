@@ -15,11 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controllers.Liste_EspaceController">
-=======
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.Controller_Liste_Traiteur">
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #05071F;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -33,7 +29,6 @@
             </Label>
             <ImageView fitHeight="124.0" fitWidth="130.0">
                <image>
-<<<<<<< HEAD
                   <Image url="@../../../../../../Desktop/New%20folder/images/images%20(1).png" />
                </image>
             </ImageView>
@@ -42,16 +37,6 @@
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../Desktop/New%20folder/images/icons8_Home_32px.png" />
-=======
-                  <Image url="@../images/images%20(1).png" />
-               </image>
-            </ImageView>
-            <Button fx:id="btn_home_an" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Home" textFill="#e7e5e5">
-               <graphic>
-                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icons8_Home_32px.png" />
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
                      </image>
                   </ImageView>
                </graphic>
@@ -65,19 +50,11 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-<<<<<<< HEAD
             <Button fx:id="btn_order_an" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../Desktop/New%20folder/view/style.css" text="Orders">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../Desktop/New%20folder/images/icons8_Open_Envelope_32px.png" />
-=======
-            <Button fx:id="btn_order_an" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Orders">
-               <graphic>
-                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icons8_Open_Envelope_32px.png" />
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
                      </image>
                   </ImageView>
                </graphic>
@@ -85,19 +62,11 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-<<<<<<< HEAD
             <Button fx:id="btn_menu_an" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../Desktop/New%20folder/view/style.css" text="Menus">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../Desktop/New%20folder/images/icons8_Xbox_Menu_32px.png" />
-=======
-            <Button fx:id="btn_menu_an" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Menus">
-               <graphic>
-                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icons8_Xbox_Menu_32px.png" />
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
                      </image>
                   </ImageView>
                </graphic>
@@ -105,19 +74,11 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-<<<<<<< HEAD
             <Button fx:id="btn_package_an" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../Desktop/New%20folder/view/style.css" text="Packages">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../Desktop/New%20folder/images/icons8_Box_32px.png" />
-=======
-            <Button fx:id="btn_package_an" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Packages">
-               <graphic>
-                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icons8_Box_32px.png" />
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
                      </image>
                   </ImageView>
                </graphic>
@@ -125,19 +86,11 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-<<<<<<< HEAD
             <Button fx:id="btn_setting_an" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../Desktop/New%20folder/view/style.css" text="Settings">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../Desktop/New%20folder/images/icons8_Slider__32px.png" />
-=======
-            <Button fx:id="btn_setting_an" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Settings">
-               <graphic>
-                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icons8_Slider__32px.png" />
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
                      </image>
                   </ImageView>
                </graphic>
@@ -145,19 +98,11 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-<<<<<<< HEAD
             <Button fx:id="bnt_signout_an" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#GotoHome" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../Desktop/New%20folder/view/style.css" text="Sign Out">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../Desktop/New%20folder/images/icons8_Sign_Out_32px.png" />
-=======
-            <Button fx:id="bnt_signout_an" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Sign Out">
-               <graphic>
-                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icons8_Sign_Out_32px.png" />
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
                      </image>
                   </ImageView>
                </graphic>
@@ -192,12 +137,8 @@
                                  </font>
                               </Label>
                               <Label text="Total " textFill="#e7e5e5" />
-<<<<<<< HEAD
                            </children>
                         </VBox>
-=======
-                           </children></VBox>
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
                      </children>
                   </HBox>
@@ -230,11 +171,7 @@
                         </Label>
                      </children>
                   </HBox>
-<<<<<<< HEAD
                   <ScrollPane layoutX="14.0" layoutY="232.0" prefHeight="320.0" prefWidth="746.0" stylesheets="@../../../../../../Desktop/New%20folder/view/style.css">
-=======
-                  <ScrollPane layoutX="14.0" layoutY="232.0" prefHeight="320.0" prefWidth="746.0" stylesheets="@style.css">
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
                      <content>
                         <VBox fx:id="champ_liste_an" prefHeight="318.0" prefWidth="744.0" spacing="5.0" style="-fx-background-color: #02030A;">
                            <padding>
@@ -245,11 +182,7 @@
                   </ScrollPane>
                   <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="749.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-<<<<<<< HEAD
                         <Image url="@../../../../../../Desktop/New%20folder/images/icons8_Search_52px.png" />
-=======
-                        <Image url="@../images/icons8_Search_52px.png" />
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
                      </image>
                   </ImageView>
                </children>

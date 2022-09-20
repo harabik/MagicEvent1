@@ -82,10 +82,7 @@ public class LoginBusinessUserController {
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
 
-            // compte Traiteur
-
-            // compte Traiteur
-
+// compte Traiteur
             if (x.equals("1")) {
                 System.out.println(user.getRole());
 
@@ -93,7 +90,7 @@ public class LoginBusinessUserController {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-                // compte location materiel
+ // compte location materiel               
             } else if (x.equals("2")) {
                 System.out.println(user.getRole());
 
@@ -101,7 +98,7 @@ public class LoginBusinessUserController {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-                // compte Espace
+//compte Espace
             } else if (x.equals("3")) {
                 System.out.println(user.getRole());
 
@@ -109,7 +106,7 @@ public class LoginBusinessUserController {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-                // compte serveur
+ //compte serveur
 
             } else if (x.equals("4")) {
                 System.out.println(user.getRole());
@@ -118,7 +115,7 @@ public class LoginBusinessUserController {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-                // compte photograohe
+  //compte photograohe
 
             } else if (x.equals("5")) {
                 System.out.println(user.getRole());
@@ -127,13 +124,12 @@ public class LoginBusinessUserController {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+// compte animateur
 
-                // compte animateur
-
-                // compte animateur
 
             } else if (x.equals("6")) {
                 System.out.println(user.getRole());
+
 
                 Parent root = FXMLLoader.load(getClass().getResource("/Gui/Views/GestionCompteAnimateur.fxml"));
 

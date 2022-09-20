@@ -1,35 +1,20 @@
 /*
-<<<<<<< HEAD
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
-=======
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
  */
 package Entites;
 
 /**
  *
-<<<<<<< HEAD
  * @author Admin
-=======
- * @author Elife-Beja-096
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
  */
 public class Animateur {
     
     
-<<<<<<< HEAD
     
     
      private int id; // default Null
        private String nbr_equipe; // not null
-=======
-     private int id; // default Null
-       private String nbrequipe; // not null
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
     private String username; // not null
     private String prenom; // not null
     private String nom; // not null
@@ -41,11 +26,7 @@ public class Animateur {
 
     public Animateur(int id, String nbrequipe, String username, String prenom, String nom, String num, String adress, String email, String gende, String active) {
         this.id = id;
-<<<<<<< HEAD
         this.nbr_equipe = nbrequipe;
-=======
-        this.nbrequipe = nbrequipe;
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
         this.username = username;
         this.prenom = prenom;
         this.nom = nom;
@@ -58,10 +39,7 @@ public class Animateur {
 
     public Animateur() {
     }
-<<<<<<< HEAD
     
-=======
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
     public int getId() {
         return id;
@@ -72,19 +50,11 @@ public class Animateur {
     }
 
     public String getNbrequipe() {
-<<<<<<< HEAD
         return nbr_equipe;
     }
 
     public void setNbrequipe(String nbrequipe) {
         this.nbr_equipe = nbrequipe;
-=======
-        return nbrequipe;
-    }
-
-    public void setNbrequipe(String nbrequipe) {
-        this.nbrequipe = nbrequipe;
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
     }
 
     public String getUsername() {
@@ -150,14 +120,10 @@ public class Animateur {
     public void setActive(String active) {
         this.active = active;
     }
-<<<<<<< HEAD
     
     
     
     
     
-=======
-
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
     
 }

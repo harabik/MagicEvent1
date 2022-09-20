@@ -129,16 +129,5 @@ public class Traiteur {
         this.specialite = specialite;
     }
 
-<<<<<<< HEAD
 
 }
-=======
-    @Override
-    public String toString() {
-        return "Traiteur{" + "id=" + id + ", num=" + num + ", nom=" + nom + ", login=" + login + ", prenom=" + prenom + ", password=" + password + ", cin=" + cin + ", adress=" + adress + ", email=" + email + '}';
-    }
-    
-    // this is a comment
-
-}
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737

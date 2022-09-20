@@ -74,12 +74,8 @@ public class GestionCompteEspaceController implements Initializable {
     @FXML
     private TextArea tacv;
     
-<<<<<<< HEAD
     
     
-=======
-     
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
     @FXML
     private Connection con;
 
@@ -99,14 +95,9 @@ public class GestionCompteEspaceController implements Initializable {
 //    public void initialize(URL url, ResourceBundle rb) {
 //        // TODO
 //    }
-<<<<<<< HEAD
     
     
     
-=======
-     
-     
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
      @Override
      public void initialize(URL url, ResourceBundle rb) {
     
@@ -144,7 +135,6 @@ public class GestionCompteEspaceController implements Initializable {
             JOptionPane.showMessageDialog(null, "Unable to affich List for Client  " + e.getMessage());
         }
      }
-<<<<<<< HEAD
     
     
     
@@ -163,15 +153,6 @@ public class GestionCompteEspaceController implements Initializable {
     
     
     
-=======
-     
-     
-     
-     
-     
-     
-     
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
      @FXML
     void GoToHome(ActionEvent event) throws IOException {

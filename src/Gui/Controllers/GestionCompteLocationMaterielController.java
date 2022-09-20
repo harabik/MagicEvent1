@@ -73,10 +73,7 @@ public class GestionCompteLocationMaterielController implements Initializable {
 
     @FXML
     private TextArea tacv;
-<<<<<<< HEAD
     
-=======
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
      @FXML
     private Connection con;
 
@@ -96,13 +93,8 @@ public class GestionCompteLocationMaterielController implements Initializable {
 //    public void initialize(URL url, ResourceBundle rb) {
 //        // TODO
 //    }
-<<<<<<< HEAD
     
      @Override
-=======
-     
-      @Override
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
      public void initialize(URL url, ResourceBundle rb) {
     
     try {
@@ -128,13 +120,9 @@ public class GestionCompteLocationMaterielController implements Initializable {
                 Phone.setPromptText(rs.getString("num_mo"));
                 email.setPromptText(rs.getString("email"));
                 cin.setPromptText(rs.getString("typemateriel"));
-<<<<<<< HEAD
 //                 S.setNom(rs.getString("nom"));
 //                 S.setAdresse(rs.getString("adresse"));
 //                 S.setNum_mo(rs.getString("num_mo"));
-=======
-//                
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
                 
                 System.out.println("ohhhhhhhhhhhhhhhhh");
 
@@ -143,14 +131,6 @@ public class GestionCompteLocationMaterielController implements Initializable {
             JOptionPane.showMessageDialog(null, "Unable to affich List for Client  " + e.getMessage());
         }
      }
-<<<<<<< HEAD
-=======
-     
-     
-     
-     
-     
->>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
      @FXML
     void GoToHome(ActionEvent event) throws IOException {
