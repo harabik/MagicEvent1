@@ -75,8 +75,20 @@ public class GestionCompteS implements Initializable {
     private TextField cin;
 
     @FXML
+<<<<<<< HEAD
     private TextArea tacv;
         @FXML
+=======
+    private TextField email;
+
+    @FXML
+    private TextField Nom;
+
+    @FXML
+    private TextArea tacv;
+    
+     @FXML
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
     private Connection con;
 
     @FXML
@@ -87,11 +99,15 @@ public class GestionCompteS implements Initializable {
     
  
      Serveurs S =new Serveurs();
+<<<<<<< HEAD
 //     ObservableList<Serveurs> Profil = FXCollections.observableArrayList();
+=======
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
     /**
      * Initializes the controller class.
      */
+<<<<<<< HEAD
     @Override
 //    public void initialize(URL url, ResourceBundle rb) {
 //        // TODO
@@ -102,6 +118,14 @@ public class GestionCompteS implements Initializable {
    
    
     public void initialize(URL url, ResourceBundle rb) {
+=======
+//    @Override
+//    public void initialize(URL url, ResourceBundle rb) {
+//        // TODO
+//    }
+     
+     public void initialize(URL url, ResourceBundle rb) {
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
         // TODO
         
 //       Connection con =ConnectionDB.getConnection();
@@ -111,6 +135,41 @@ try {
         } catch (ClassNotFoundException e) {
             JOptionPane.showMessageDialog(null, "Unable to register class " + e.getMessage());
         }
+<<<<<<< HEAD
+=======
+
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+            stmt = (Statement) con.createStatement();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Unable to connect to database " + e.getMessage());
+        }
+        
+        try {
+            String sql;
+            sql = "select *  from serveur ";
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                Nom.setPromptText(rs.getString("nom"));
+                Adress.setPromptText(rs.getString("adresse"));
+                Phone .setPromptText(rs.getString("num_mo"));
+                cin.setPromptText(rs.getString("cin"));
+//                 S.setNom(rs.getString("nom"));
+//                 S.setAdresse(rs.getString("adresse"));
+//                 S.setNum_mo(rs.getString("num_mo"));
+                
+                System.out.println("ohhhhhhhhhhhhhhhhh");
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Unable to affich List for Client  " + e.getMessage());
+        }
+     
+     
+     
+     
+     
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
         try {
             con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");

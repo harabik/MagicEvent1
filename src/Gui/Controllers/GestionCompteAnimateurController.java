@@ -35,6 +35,7 @@ import javax.swing.JOptionPane;
  *
  * @author Admin
  */
+//kh
 public class GestionCompteAnimateurController implements Initializable {
      private Parent root;
      private Stage stage;
@@ -73,6 +74,10 @@ public class GestionCompteAnimateurController implements Initializable {
 
     @FXML
     private TextArea tacv;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
      @FXML
     private Connection con;
     
@@ -84,15 +89,29 @@ public class GestionCompteAnimateurController implements Initializable {
     
  
      Animateur t =new Animateur();
+<<<<<<< HEAD
 
     /**
      * Initializes the controller class.
      */
+=======
+    
+    
+    
+
+    /**
+     * Initializes the controller class.
+//     */
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 //    @Override
 //    public void initialize(URL url, ResourceBundle rb) {
 //        // TODO
 //    }
 //    
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
     @Override
      public void initialize(URL url, ResourceBundle rb) {
     
@@ -119,12 +138,16 @@ public class GestionCompteAnimateurController implements Initializable {
                 Phone.setPromptText(rs.getString("num"));
                 email.setPromptText(rs.getString("mail"));
                 cin.setPromptText(rs.getString("nbr_equipe"));
+<<<<<<< HEAD
 //                 S.setNom(rs.getString("nom"));
 //                 S.setAdresse(rs.getString("adresse"));
 //                 S.setNum_mo(rs.getString("num_mo"));
                 
                 System.out.println("ohhhhhhhhhhhhhhhhh");
 
+=======
+//                 
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Unable to affich List for Client  " + e.getMessage());
@@ -140,11 +163,14 @@ public class GestionCompteAnimateurController implements Initializable {
     
     
     
+<<<<<<< HEAD
     
     
     
     
     
+=======
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
      @FXML
     void GoToHome(ActionEvent event) throws IOException {
@@ -190,7 +216,7 @@ public class GestionCompteAnimateurController implements Initializable {
                 LvFiles.getItems().add(files.get(i));
                 
             } else {
-                System.out.println(" file is invalid!");
+                System.out.println(" fichier non trouver");
 
             }
         }

@@ -1,11 +1,18 @@
 /*
+<<<<<<< HEAD
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+=======
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
  */
 package Entites;
 
 /**
  *
+<<<<<<< HEAD
  * @author Admin
  */
 public class Espace {
@@ -15,6 +22,15 @@ public class Espace {
     private int nbr; // default Null
     private int surface; // default Null 
     private int id_ville; // default Null 
+=======
+ * @author Elife-Beja-096
+ */
+public class Espace {
+    private int id; // default Null
+    private int nbr; // default Null
+    private int surface; // default Null 
+    private int id_ville; // default Null 
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
     private int id_region; // default Null
    private String nom; // not null
    private String num; // not null
@@ -107,6 +123,11 @@ public class Espace {
     public void setActive(String active) {
         this.active = active;
     }
+<<<<<<< HEAD
 
+=======
+   
+   
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
     
 }

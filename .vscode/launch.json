@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Admin.Main",
+            "projectName": "MagicEvent1_577ee09"
+        },
+        {
+            "type": "java",
             "name": "Launch MagicEventMainFX",
             "request": "launch",
             "mainClass": "magicevent.MagicEventMainFX",

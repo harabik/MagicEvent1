@@ -4,7 +4,11 @@
  */
 package Gui.Controllers;
 
+<<<<<<< HEAD
 import Entites.Photographe;
+=======
+import Entites.Photgraphe;
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -70,14 +74,21 @@ public class GestionComptephotographeController implements Initializable {
     private TextField email;
         @FXML
     private TextArea tacv;
+<<<<<<< HEAD
         @FXML
     private TextField nom;
         
+=======
+         @FXML
+    private TextField nom;
+       
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
          @FXML
     private Connection con;
 
     @FXML
     private Statement stmt;
+<<<<<<< HEAD
      @FXML
     private Statement st;
 
@@ -86,6 +97,13 @@ public class GestionComptephotographeController implements Initializable {
     
  
      Photographe S =new Photographe();
+=======
+     
+
+    @FXML
+    private ResultSet rs;
+     Photgraphe S =new Photgraphe();
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
     /**
      * Initializes the controller class.
@@ -95,9 +113,16 @@ public class GestionComptephotographeController implements Initializable {
 //        // TODO
 //    }
      
+<<<<<<< HEAD
      @Override
      public void initialize(URL url, ResourceBundle rb) {
     
+=======
+     
+     @Override
+     public void initialize(URL url, ResourceBundle rb) {
+   
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
     try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -110,7 +135,11 @@ public class GestionComptephotographeController implements Initializable {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Unable to connect to database " + e.getMessage());
         }
+<<<<<<< HEAD
         
+=======
+       
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
         try {
             String sql;
             sql = "select *  from photographe ";
@@ -124,8 +153,13 @@ public class GestionComptephotographeController implements Initializable {
 //                 S.setNom(rs.getString("nom"));
 //                 S.setAdresse(rs.getString("adresse"));
 //                 S.setNum_mo(rs.getString("num_mo"));
+<<<<<<< HEAD
                 
                 
+=======
+               
+               
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
             }
         } catch (SQLException e) {
@@ -139,11 +173,14 @@ public class GestionComptephotographeController implements Initializable {
      
      
      
+<<<<<<< HEAD
      
      
      
      
      
+=======
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
     @FXML
     private void handleAddcv(ActionEvent event) {

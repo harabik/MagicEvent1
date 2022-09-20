@@ -1,73 +1,26 @@
 package Gui.Controllers;
 
+import Entites.BusinessUser;
+import Entites.Client;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.Statement;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.util.Callback;
 
-import javax.jws.soap.SOAPBinding.Use;
-import javax.swing.JOptionPane;
-
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
-
-import Entites.BusinessUser;
-import Entites.Client;
-
+import javax.swing.*;
+import java.net.URL;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import java.net.URL;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.ResourceBundle;
-
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumn.CellDataFeatures;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
-import javafx.util.Callback;
-
-import javafx.scene.control.TextField;
 
 public class Controller_admin implements Initializable {
     @FXML
@@ -1330,6 +1283,76 @@ public class Controller_admin implements Initializable {
         };
         // editCol.setCellFactory(cellFoctory);
         ClientTable.setItems(ClientList);
+
+    }
+
+    @FXML
+    void Tableclicked_user() {
+        BusinessUser user = UserTable.getSelectionModel().getSelectedItem();
+        String sql = "SELECT * FROM `bus_user` where id = '" + user.getId() + "'";
+        System.out.println(user);
+        System.out.println(user.getId());
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+            stmt = (Statement) con.prepareStatement(sql);
+
+            resultSet = stmt.executeQuery(sql);
+            if (resultSet.next()) {
+                System.out.println("bienvenu");
+                login_user.setText(resultSet.getString("login"));
+                id_user.setText(resultSet.getString("bus_user_id"));
+                firstname_user.setText(resultSet.getString("nom"));
+                lastname_user.setText(resultSet.getString("prenom"));
+                role_user.setText(resultSet.getString("role"));
+                num_user.setText(resultSet.getString("num"));
+                email_user.setText(resultSet.getString("email"));
+                cin_user.setText(resultSet.getString("cin"));
+                password_user.setText(resultSet.getString("password"));
+                password1_user.setText(resultSet.getString("password"));
+                active_user.setText(resultSet.getString("is_active"));
+
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void Tableclicked_client() {
+
+        Client client = ClientTable.getSelectionModel().getSelectedItem();
+        String sql = "SELECT * FROM `client` where id = '" + client.getId() + "'";
+        System.out.println(client);
+        System.out.println(client.getId());
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+            stmt = (Statement) con.prepareStatement(sql);
+
+            resultSet = stmt.executeQuery(sql);
+            if (resultSet.next()) {
+
+                login_client.setText(resultSet.getString("username"));
+
+                firstname_client.setText(resultSet.getString("nom"));
+                lastname_client.setText(resultSet.getString("prenom"));
+                gende_client.setText(resultSet.getString("gende"));
+                num_client.setText(resultSet.getString("num"));
+                email_client.setText(resultSet.getString("email"));
+                ville_client.setText(resultSet.getString("id_ville"));
+                region_client.setText(resultSet.getString("id_region"));
+                password_client.setText(resultSet.getString("password"));
+                password1_client.setText(resultSet.getString("password"));
+                active_client.setText(resultSet.getString("is_active"));
+
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
     }
 

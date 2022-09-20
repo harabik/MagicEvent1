@@ -5,7 +5,10 @@
 package Gui.Controllers;
 
 import Entites.Traiteur;
+<<<<<<< HEAD
 import java.awt.image.BufferedImage;
+=======
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -31,9 +34,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+<<<<<<< HEAD
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import static jdk.nashorn.tools.ShellFunctions.input;
+=======
+import javax.swing.JOptionPane;
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
 /**
  * FXML Controller class
@@ -79,7 +86,11 @@ public class GestionCompteTraiteurController implements Initializable {
     @FXML
     private TextArea tacv;
     
+<<<<<<< HEAD
      @FXML
+=======
+      @FXML
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
     private Connection con;
 
     @FXML
@@ -98,7 +109,12 @@ public class GestionCompteTraiteurController implements Initializable {
 //    public void initialize(URL url, ResourceBundle rb) {
 //        // TODO
 //    }
+<<<<<<< HEAD
     
+=======
+     
+     
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
      @Override
      public void initialize(URL url, ResourceBundle rb) {
     
@@ -125,17 +141,24 @@ public class GestionCompteTraiteurController implements Initializable {
                 Phone.setPromptText(rs.getString("num_mo"));
                 email.setPromptText(rs.getString("id_ville"));
                 cin.setPromptText(rs.getString("specialite"));
+<<<<<<< HEAD
 //                 S.setNom(rs.getString("nom"));
 //                 S.setAdresse(rs.getString("adresse"));
 //                 S.setNum_mo(rs.getString("num_mo"));
                 
                 System.out.println("ohhhhhhhhhhhhhhhhh");
+=======
+//                 
+                
+               
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Unable to affich List for Client  " + e.getMessage());
         }
      }
+<<<<<<< HEAD
     
     
     
@@ -150,6 +173,8 @@ public class GestionCompteTraiteurController implements Initializable {
     
     
     
+=======
+>>>>>>> 8f16dc7f9e72236072744f58a2c5cb95aaea7737
 
      @FXML
     void GoToHome(ActionEvent event) throws IOException {
