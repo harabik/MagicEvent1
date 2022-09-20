@@ -26,7 +26,7 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </ImageView>
-                  <TextField fx:id="lastNameFirstName" alignment="CENTER" prefHeight="34.0" prefWidth="320.0" promptText="Last Name First Name" />
+                  <TextField fx:id="nom" alignment="CENTER" prefHeight="34.0" prefWidth="320.0" promptText="Nom" />
                </children>
             </VBox>
             <Label prefHeight="17.0" prefWidth="54.0" text=" Phone">
@@ -47,12 +47,12 @@
                </font>
             </Label>
             <TextField fx:id="Adress" promptText="Adress" />
-            <Label prefHeight="17.0" prefWidth="54.0" text=" cin">
+            <Label prefHeight="17.0" prefWidth="54.0" text="Nomber equipe ">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="cin" promptText="Cin" />
+            <TextField fx:id="cin" />
             <Button fx:id="Edit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="79.0" text="Edit">
                <font>
                   <Font size="16.0" />

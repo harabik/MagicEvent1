@@ -10,14 +10,16 @@ package Entites;
  */
 public class Traiteur {
     private int id;
-    private int num;
-    private String nom;
+    private String num_mo;
+    private String nom_societe;
     private String login;
     private String prenom;
     private String password;
     private String cin;
-    private String adress;
+    private String adresse;
     private String email;
+    private String specialite;
+    
 
     public Traiteur() {
     }
@@ -27,17 +29,24 @@ public class Traiteur {
         this.password = password;
     }
 
-    public Traiteur(int id, int num, String nom, String login, String prenom, String password, String cin,
-            String adress, String email) {
+    public Traiteur(String num_mo, String nom_societe, String adresse, String specialite) {
+        this.num_mo = num_mo;
+        this.nom_societe = nom_societe;
+        this.adresse = adresse;
+        this.specialite = specialite;
+    }
+
+    public Traiteur(int id, String num_mo, String nom_societe, String login, String prenom, String password, String cin, String adresse, String email, String specialite) {
         this.id = id;
-        this.num = num;
-        this.nom = nom;
+        this.num_mo = num_mo;
+        this.nom_societe = nom_societe;
         this.login = login;
         this.prenom = prenom;
         this.password = password;
         this.cin = cin;
-        this.adress = adress;
+        this.adresse = adresse;
         this.email = email;
+        this.specialite = specialite;
     }
 
     public int getId() {
@@ -48,20 +57,28 @@ public class Traiteur {
         this.id = id;
     }
 
-    public int getNum() {
-        return num;
+    public String getNum_mo() {
+        return num_mo;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setNum_mo(String num_mo) {
+        this.num_mo = num_mo;
     }
 
-    public String getNom() {
-        return nom;
+    public String getNom_societe() {
+        return nom_societe;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNom_societe(String nom_societe) {
+        this.nom_societe = nom_societe;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPrenom() {
@@ -88,12 +105,12 @@ public class Traiteur {
         this.cin = cin;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAdresse() {
+        return adresse;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
     public String getEmail() {
@@ -104,12 +121,13 @@ public class Traiteur {
         this.email = email;
     }
 
-    public String getLogin() {
-        return login;
+    public String getSpecialite() {
+        return specialite;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setSpecialite(String specialite) {
+        this.specialite = specialite;
     }
+
 
 }

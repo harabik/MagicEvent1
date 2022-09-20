@@ -52,7 +52,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="cin" promptText="Cin" />
+            <TextField fx:id="cin" />
             <Button fx:id="Edit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="79.0" text="Edit">
                <font>
                   <Font size="16.0" />

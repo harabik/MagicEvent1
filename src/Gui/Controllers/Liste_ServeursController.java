@@ -44,8 +44,15 @@ public class Liste_ServeursController implements Initializable {
     Statement st;  
     
     @FXML
+    private Label Lserveurs;
+
+
+    @FXML
+    private Label serveur;
+
+    
+    @FXML
     private Label labellServeur;
-   
    
     @FXML
    
@@ -53,8 +60,6 @@ public class Liste_ServeursController implements Initializable {
      @FXML
     private TableColumn<Serveurs, String> adress;
 
-    @FXML
-    private Button close;
 
     @FXML
     private TableColumn<Serveurs, String> gende;
