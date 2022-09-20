@@ -60,7 +60,7 @@
             <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
             <Pane layoutX="76.0" layoutY="106.0">
                <children>
-                  <Button fx:id="buttonTraiteur" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
+                  <Button fx:id="buttonTraiteur" mnemonicParsing="false" onAction="#GoToTraiteur" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
                   <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                      <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
@@ -84,7 +84,7 @@
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="81.0" fitWidth="77.0" layoutX="48.0" layoutY="47.0">
+                  <ImageView fx:id="imgtrateur" fitHeight="81.0" fitWidth="77.0" layoutX="48.0" layoutY="47.0">
                      <image>
                         <Image url="@../images/traiteurrrr.-modified.png" />
                      </image>
@@ -93,7 +93,7 @@
             </Pane>
             <Pane layoutX="316.0" layoutY="106.0" prefHeight="202.0" prefWidth="179.0">
                <children>
-                  <Button fx:id="buttonEspace" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
+                  <Button fx:id="buttonEspace" mnemonicParsing="false" onAction="#GoToEspace" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
                   <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                      <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
@@ -117,7 +117,7 @@
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="34.0" layoutY="37.0">
+                  <ImageView fx:id="imgespace" fitHeight="100.0" fitWidth="100.0" layoutX="34.0" layoutY="37.0">
                      <image>
                         <Image url="@../images/espace-modified.png" />
                      </image>
@@ -126,7 +126,7 @@
             </Pane>
             <Pane layoutX="71.0" layoutY="354.0" prefHeight="202.0" prefWidth="179.0">
                <children>
-                  <Button fx:id="buttonAnimateur" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
+                  <Button fx:id="buttonAnimateur" mnemonicParsing="false" onAction="#GoToAnimateur" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
                   <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                      <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
@@ -150,7 +150,7 @@
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="81.0" fitWidth="100.0" layoutX="37.0" layoutY="47.0">
+                  <ImageView fx:id="imageanimateur" fitHeight="81.0" fitWidth="100.0" layoutX="37.0" layoutY="47.0">
                      <image>
                         <Image url="@../images/animateur-modified.png" />
                      </image>
@@ -159,7 +159,7 @@
             </Pane>
             <Pane layoutX="316.0" layoutY="354.0" prefHeight="202.0" prefWidth="179.0">
                <children>
-                  <Button fx:id="buttonLocataire" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
+                  <Button fx:id="buttonLocataire" mnemonicParsing="false" onAction="#GoToLocataire" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
                   <Circle layoutX="84.0" layoutY="87.0" radius="50.0" stroke="#ff924f" strokeType="INSIDE">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
@@ -176,7 +176,7 @@
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="89.0" fitWidth="92.0" layoutX="39.0" layoutY="43.0">
+                  <ImageView fx:id="imagelocataire" fitHeight="89.0" fitWidth="92.0" layoutX="39.0" layoutY="43.0">
                      <image>
                         <Image url="@../images/locationmateriel-modified.png" />
                      </image>
@@ -185,7 +185,7 @@
             </Pane>
             <Pane layoutX="559.0" layoutY="354.0" prefHeight="202.0" prefWidth="179.0">
                <children>
-                  <Button fx:id="buttonPhotographe" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
+                  <Button fx:id="buttonPhotographe" mnemonicParsing="false" onAction="#GoToPhotographe" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
                   <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
@@ -202,7 +202,7 @@
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="81.0" fitWidth="92.0" layoutX="40.0" layoutY="46.0">
+                  <ImageView fx:id="imagephotographe" fitHeight="81.0" fitWidth="92.0" layoutX="40.0" layoutY="46.0">
                      <image>
                         <Image url="@../images/photographe-modified.png" />
                      </image>
@@ -211,7 +211,7 @@
             </Pane>
             <Pane layoutX="559.0" layoutY="106.0" prefHeight="190.0" prefWidth="174.0">
                <children>
-                  <Button fx:id="buttonServeurs" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
+                  <Button fx:id="buttonServeurs" mnemonicParsing="false" onAction="#GoToServeurs" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../css/fullpackstyling.css" />
                   <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
@@ -228,7 +228,7 @@
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="89.0" fitWidth="92.0" layoutX="38.0" layoutY="43.0">
+                  <ImageView fx:id="imagesServeurs" fitHeight="89.0" fitWidth="92.0" layoutX="38.0" layoutY="43.0">
                      <image>
                         <Image url="@../images/serveur-modified.png" />
                      </image>

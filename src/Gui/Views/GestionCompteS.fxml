@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controllers.GestionCompteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controllers.GestionCompteS">
    <children>
       <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="511.0" prefWidth="274.0" style="-fx-background-color: #b9fff8;">
          <children>
@@ -26,7 +26,6 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </ImageView>
-                  <TextField fx:id="lastNameFirstName" alignment="CENTER" prefHeight="34.0" prefWidth="320.0" promptText="Last Name First Name" />
                </children>
             </VBox>
             <Label prefHeight="17.0" prefWidth="54.0" text=" Phone">
@@ -34,19 +33,19 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="Phone" promptText="Phone" />
-            <Label prefHeight="17.0" prefWidth="54.0" text=" Email">
+            <TextField fx:id="Num_mo" promptText="Phone" />
+            <Label prefHeight="21.0" prefWidth="115.0" text="LastName">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="email" promptText="Email" />
+            <TextField fx:id="Nom" promptText="LastName" />
             <Label prefHeight="17.0" prefWidth="54.0" text=" Adress">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="Adress" promptText="Adress" />
+            <TextField fx:id="Adresse" promptText="Adress" />
             <Label prefHeight="17.0" prefWidth="54.0" text=" cin">
                <font>
                   <Font name="System Bold" size="15.0" />

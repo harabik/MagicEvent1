@@ -47,7 +47,7 @@
                </font>
             </Label>
             <TextField fx:id="Adress" promptText="Adress" />
-            <Label prefHeight="17.0" prefWidth="54.0" text=" cin">
+            <Label prefHeight="21.0" prefWidth="142.0" text="type materiel">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>

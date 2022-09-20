@@ -20,6 +20,8 @@ public class ConnectionDB {
     private static Connection con;
     private static String url = "jdbc:mysql://localhost/smartevent01";
 
+   
+   
     private ConnectionDB() {
 
     }

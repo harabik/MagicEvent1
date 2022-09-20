@@ -4,6 +4,7 @@
  */
 package magicevent;
 
+
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,11 +17,11 @@ import javafx.stage.Stage;
  * @author Admin
  */
 public class MagicEventMainFX extends Application {
-
+// main 
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        //Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Liste_Serveurs.fxml"));
 
 
         // Parent root =
@@ -37,8 +38,8 @@ public class MagicEventMainFX extends Application {
         // FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteS.fxml"));
         // Parent root =
 //         Parent root =FXMLLoader.load(getClass().getResource("../Gui/Views/Sigupclient.fxml"));
-         Parent root =
-         FXMLLoader.load(getClass().getResource("../Gui/Views/login.fxml"));
+//         Parent root =
+//         FXMLLoader.load(getClass().getResource("../Gui/Views/login.fxml"));
         //Parent root =
         // FXMLLoader.load(getClass().getResource("../Gui/Views/SignupBusinessUsers.fxml"));
         // Parent root =

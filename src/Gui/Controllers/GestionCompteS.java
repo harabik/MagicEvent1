@@ -4,11 +4,21 @@
  */
 package Gui.Controllers;
 
+import Entites.Serveurs;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,8 +30,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -39,9 +51,15 @@ public class GestionCompteS implements Initializable {
 
     @FXML
     private Button Addcv;
+     @FXML
+    private TextField Nom;
 
     @FXML
-    private TextField Adress;
+    private TextField Num_mo;
+
+    @FXML
+    private TextField Adresse;
+       
 
     @FXML
     private Button Close;
@@ -52,29 +70,114 @@ public class GestionCompteS implements Initializable {
     @FXML
     private ListView<File> LvFiles;
 
-    @FXML
-    private TextField Phone;
 
     @FXML
     private TextField cin;
 
     @FXML
-    private TextField email;
-
-    @FXML
-    private TextField lastNameFirstName;
-
-    @FXML
     private TextArea tacv;
+        @FXML
+    private Connection con;
+
+    @FXML
+    private Statement stmt;
+
+    @FXML
+    private ResultSet rs;
+    
+ 
+     Serveurs S =new Serveurs();
+//     ObservableList<Serveurs> Profil = FXCollections.observableArrayList();
 
     /**
      * Initializes the controller class.
      */
     @Override
+//    public void initialize(URL url, ResourceBundle rb) {
+//        // TODO
+//    }
+//    
+//     // 
+    
+   
+   
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
+        
+//       Connection con =ConnectionDB.getConnection();
+//          st=ConnectionDB.openConnection().createStatement();
+try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Unable to register class " + e.getMessage());
+        }
 
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+            stmt = (Statement) con.createStatement();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Unable to connect to database " + e.getMessage());
+        }
+        
+        try {
+            String sql;
+            sql = "select *  from serveur ";
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                Nom.setPromptText(rs.getString("nom"));
+                Adresse.setPromptText(rs.getString("adresse"));
+                Num_mo.setPromptText(rs.getString("num_mo"));
+                cin.setPromptText(rs.getString("cin"));
+//                 S.setNom(rs.getString("nom"));
+//                 S.setAdresse(rs.getString("adresse"));
+//                 S.setNum_mo(rs.getString("num_mo"));
+                
+                System.out.println("ohhhhhhhhhhhhhhhhh");
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Unable to affich List for Client  " + e.getMessage());
+        }
+    
+        
+        
+        
+        
+        
+//        try {
+//            ResultSet rs =con.createStatement().executeQuery("select * from serveur");
+//            while(rs.next()){
+////            S.add(new Serveurs(rs.getString("nom"),rs.getString("adresse"),rs.getString("num_mo"),rs.getString("gende")));
+//             S.setNom(rs.getString("chiheb"));
+//             S.setAdresse(rs.getString("7 rue 42216 ghdir golla hrairia tunis"));
+//             S.setNum_mo(rs.getString("99088487"));
+//             
+////                S.setNom("ali");
+//          
+//             
+//            }
+//            } catch (SQLException ex) {
+//            Logger.getLogger(Liste_ServeursController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
+        
+        
+        
+        
+       
+             
+
+        
+       
+    }    
+    
+    
+    
+    
+    
+       
+    
+    
      @FXML
     void GoToHome(ActionEvent event) throws IOException {
      root = FXMLLoader.load(getClass().getResource("../Views/Home.fxml"));
@@ -124,5 +227,18 @@ public class GestionCompteS implements Initializable {
             }
         }
     }
-
 }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+

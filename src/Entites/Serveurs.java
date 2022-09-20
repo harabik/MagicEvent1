@@ -13,6 +13,7 @@ import java.util.Date;
 public class Serveurs {
     private int id; // default Nul
     private String nom;
+    private String adresse;
     private String cin;
     private String gende;
     private String langue;
@@ -26,10 +27,19 @@ public class Serveurs {
     public Serveurs() {
     }
 
-    public Serveurs(int id, String nom, String cin, String gende, String langue, String num_mo, String photo_pro, String photo_cin, String email, String ph_certif, Date date_naissance) {
+    public Serveurs(String nom, String adresse, String gende, String num_mo) {
+        this.nom = nom;
+        this.adresse = adresse;
+        this.gende = gende;
+        this.num_mo = num_mo;
+    }
+    
+
+    public Serveurs(int id, String nom, String cin,String adresse, String gende, String langue, String num_mo, String photo_pro, String photo_cin, String email, String ph_certif, Date date_naissance) {
         this.id = id;
         this.nom = nom;
         this.cin = cin;
+         this.adresse = adresse;
         this.gende = gende;
         this.langue = langue;
         this.num_mo = num_mo;
@@ -38,6 +48,14 @@ public class Serveurs {
         this.email = email;
         this.ph_certif = ph_certif;
         this.date_naissance = date_naissance;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
     public int getId() {

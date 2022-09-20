@@ -35,7 +35,7 @@
                </font>
             </Label>
             <TextField fx:id="Phone" promptText="Phone" />
-            <Label prefHeight="17.0" prefWidth="54.0" text=" Email">
+            <Label prefHeight="17.0" prefWidth="54.0" text="surface">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -47,7 +47,7 @@
                </font>
             </Label>
             <TextField fx:id="Adress" promptText="Adress" />
-            <Label prefHeight="17.0" prefWidth="54.0" text=" cin">
+            <Label prefHeight="21.0" prefWidth="140.0" text="nomber de place ">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
