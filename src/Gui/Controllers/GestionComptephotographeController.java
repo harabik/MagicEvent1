@@ -4,9 +4,15 @@
  */
 package Gui.Controllers;
 
+import Entites.Photgraphe;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -22,6 +28,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -62,14 +69,73 @@ public class GestionComptephotographeController implements Initializable {
     private TextField email;
         @FXML
     private TextArea tacv;
+         @FXML
+    private TextField nom;
+       
+         @FXML
+    private Connection con;
+
+    @FXML
+    private Statement stmt;
+     
+
+    @FXML
+    private ResultSet rs;
+     Photgraphe S =new Photgraphe();
 
     /**
      * Initializes the controller class.
      */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
+//    @Override
+//    public void initialize(URL url, ResourceBundle rb) {
+//        // TODO
+//    }
+     
+     
+     @Override
+     public void initialize(URL url, ResourceBundle rb) {
+   
+    try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Unable to register class " + e.getMessage());
+        }
+
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+            stmt = (Statement) con.createStatement();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Unable to connect to database " + e.getMessage());
+        }
+       
+        try {
+            String sql;
+            sql = "select *  from photographe ";
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                nom.setPromptText(rs.getString("nom"));
+                Adress.setPromptText(rs.getString("adresse"));
+                Phone.setPromptText(rs.getString("num"));
+                email.setPromptText(rs.getString("mail"));
+                cin.setPromptText(rs.getString("nbr_equipe"));
+//                 S.setNom(rs.getString("nom"));
+//                 S.setAdresse(rs.getString("adresse"));
+//                 S.setNum_mo(rs.getString("num_mo"));
+               
+               
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Unable to affich List for Client  " + e.getMessage());
+        }
+     }
+     
+     
+     
+     
+     
+     
+     
 
     @FXML
     private void handleAddcv(ActionEvent event) {
