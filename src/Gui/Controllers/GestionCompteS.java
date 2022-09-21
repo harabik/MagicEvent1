@@ -5,6 +5,7 @@
 package Gui.Controllers;
 
 import Entites.Serveurs;
+import Utils.ConnectionDB;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -65,7 +66,7 @@ public class GestionCompteS implements Initializable {
     private Button Close;
 
     @FXML
-    private Button Edit;
+    private Button Editer;
 
     @FXML
     private ListView<File> LvFiles;
@@ -227,7 +228,48 @@ try {
             }
         }
     }
+ @FXML
+    void Edit(ActionEvent event) {
+        System.out.println("khalil offffffffff");
+        System.out.println(Nom.getText());
+
+         con = ConnectionDB.openConnection();
+        try {
+            try (java.sql.PreparedStatement ps = con
+                    .prepareStatement("UPDATE serveur SET   adresse = ?, num_mo = ?," +
+                            "cin = ? WHERE id = 1")) {
+
+                ps.setString(1, Adresse.getText());
+                ps.setString(2, Num_mo.getText());
+                ps.setString(3, cin.getText());
+
+                ps.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
     
     
     

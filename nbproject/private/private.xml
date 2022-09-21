@@ -3,8 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Admin/Documents/projet%20java%20fx/MagicEvent1/src/Gui/Controllers/GestionCompteTraiteurController.java</file>
-            <file>file:/C:/Users/Admin/Documents/projet%20java%20fx/MagicEvent1/src/Gui/Views/Liste_traiteur.fxml</file>
+            <file>file:/C:/Users/Admin/Documents/projet%20java%20fx/MagicEvent1/src/Gui/Controllers/Liste_LocataireController.java</file>
+            <file>file:/C:/Users/Admin/Documents/projet%20java%20fx/MagicEvent1/src/Gui/Controllers/SignupClientController.java</file>
+            <file>file:/C:/Users/Admin/Documents/projet%20java%20fx/MagicEvent1/src/magicevent/MagicEventMainFX.java</file>
         </group>
     </open-files>
 </project-private>

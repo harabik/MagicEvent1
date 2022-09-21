@@ -20,28 +20,23 @@ public class MagicEventMainFX extends Application {
 // main 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
-//        Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Liste_Photographeur.fxml"));
-       Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Liste_Serveurs.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Liste_Espace.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Liste_Locataire.fxml"));
+//          Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Liste_Photographeur.fxml"));
+//       Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Liste_Serveurs.fxml"));
 //        Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Liste_traiteur.fxml"));
+     //    Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/Liste_Animateur.fxml"));
 
 //
-//         Parent root =
-//         FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteLocationMateriel.fxml"));
-//         Parent root =
-//         FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteEspace.fxml"));
-//         Parent root =
-//         FXMLLoader.load(getClass().getResource("../Gui/Views/GestionComptephotographe.fxml"));
-//         Parent root =
-//         FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteAnimateur.fxml"));
-//         Parent root =
-//         FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteTraiteur.fxml"));
-//         Parent root =
-//         FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteS.fxml"));
+//         Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteLocationMateriel.fxml"));
+//         Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteEspace.fxml"));
+//         Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/GestionComptephotographe.fxml"));
+//         Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteAnimateur.fxml"));
+//         Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteTraiteur.fxml"));
+//         Parent root = FXMLLoader.load(getClass().getResource("../Gui/Views/GestionCompteS.fxml"));
         // Parent root =
-//         Parent root =FXMLLoader.load(getClass().getResource("../Gui/Views/Sigupclient.fxml"));
-//         Parent root =
-//         FXMLLoader.load(getClass().getResource("../Gui/Views/login.fxml"));
+         Parent root =FXMLLoader.load(getClass().getResource("../Gui/Views/Sigupclient.fxml"));
+//           Parent root =  FXMLLoader.load(getClass().getResource("../Gui/Views/login.fxml"));
         //Parent root =
         // FXMLLoader.load(getClass().getResource("../Gui/Views/SignupBusinessUsers.fxml"));
         // Parent root =

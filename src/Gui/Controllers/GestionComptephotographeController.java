@@ -5,11 +5,15 @@
 package Gui.Controllers;
 
 import Entites.Photographe;
+import static java.awt.SystemColor.text;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -39,6 +43,7 @@ public class GestionComptephotographeController implements Initializable {
     private Parent root;
     private Stage stage;
     private Scene scene;
+     String s;
 
     final FileChooser fc = new FileChooser();
     @FXML
@@ -184,6 +189,55 @@ public class GestionComptephotographeController implements Initializable {
             }
         }
     }
+        
+        
+// @FXML
+//    void Modifer(ActionEvent event) {
+//        
+//        
+//         try {
+//            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+//            stmt = (Statement) con.createStatement();
+//        } catch (SQLException e) {
+//            JOptionPane.showMessageDialog(null, "Unable to connect to database " + e.getMessage());
+//        }
+//        
+//        try {
+//            String sql;
+////            sql = "select *  from photographe ";
+//        
+//         try{
+//              System.out.println("khalil");
+//               Connection con = DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+////               stmt = (Statement) con.createStatement();
+//               PreparedStatement stmt = con.prepareStatement("UPDATE  photographe SET(nom,num,mail,adresse,nbr_equipe) values(?,?,?,?,?)");
+//               InputStream is = new FileInputStream(new File(s));
+////                nom.setPromptText(rs.getString("nom"));
+////                Adress.setPromptText(rs.getString("adresse"));
+////                Phone.setPromptText(rs.getString("num"));
+////                email.setPromptText(rs.getString("mail"));
+////                cin.setPromptText(rs.getString("nbr_equipe"));
+//               
+//               System.out.println("8assobii");
+//               stmt.setString(3,nom.getText());
+//               stmt.setString(6, Phone.getText());
+//               stmt.setString(7, email.getText());
+//               stmt.setString(11,  Adress.getText());
+//               stmt.setString(14, cin.getText());
+//              
+////               stmt.setBlob(5,is);
+//               stmt.executeUpdate();
+//               
+//               JOptionPane.showMessageDialog(null, "Data Inserted");
+//           }catch(Exception ex){
+//               ex.printStackTrace();
+//           }
+       
+    @FXML
+    void Edit(ActionEvent event) {
+
+    } 
+    
       @FXML
     void GoToHome(ActionEvent event) throws IOException {
      root = FXMLLoader.load(getClass().getResource("../Views/Home.fxml"));

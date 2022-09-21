@@ -4,9 +4,20 @@
  */
 package Gui.Controllers;
 
+import Entites.Location;
+import Entites.Traiteur;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,10 +27,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -30,59 +43,86 @@ public class Liste_LocataireController implements Initializable {
     private Parent root;
     private Stage stage;
     private Scene scene;
+   @FXML
+    private Connection con;
 
     @FXML
-    private Button btn_home_lo;
+    private Statement stmt;
+
     @FXML
-    private Button btn_order_lo;
+    private ResultSet rs;
+
+
     @FXML
-    private Button btn_menu_lo;
+    private ImageView image;
     @FXML
-    private Button btn_package_lo;
+    private Label loc;
     @FXML
-    private Button btn_setting_lo;
+    private Button close;
     @FXML
-    private Button bnt_signout_lo;
+    private Label Llo;
     @FXML
-    private Pane pane_home_an;
+    private TableView<Location> table;
     @FXML
-    private Pane pane_order_an;
+    private TableColumn<Location,String> nom;
     @FXML
-    private Pane pane_menu_an;
+    private TableColumn<Location,String> address;
     @FXML
-    private Pane pane_overview;
+    private TableColumn<Location,String> numero;
     @FXML
-    private TextField recherche_lo;
-    @FXML
-    private Label total_lo;
-    @FXML
-    private Label nom_lo;
-    @FXML
-    private Label gender_lo;
-    @FXML
-    private Label ville_lo;
-    @FXML
-    private Label num_tlf_lo;
-    @FXML
-    private Label book_lo;
-    @FXML
-    private VBox champ_liste_lo;
+    private TableColumn<Location,String> Tm;
+    
+     ObservableList<Location> olist = FXCollections.observableArrayList();
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+      // TODO
+ 
+try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Unable to register class " + e.getMessage());
+        }
+
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/smartevent01", "root", "");
+            stmt = (Statement) con.createStatement();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Unable to connect to database " + e.getMessage());
+        }
+        try {
+            ResultSet rs =con.createStatement().executeQuery("select * from location ");
+            while(rs.next()){
+            olist.add(new Location(rs.getString("nom_societe"),rs.getString("num_mo"),rs.getString("adresse"),rs.getString("typemateriel")));
+            }
+            } catch (SQLException ex) {
+            Logger.getLogger(Liste_ServeursController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        nom.setCellValueFactory(new PropertyValueFactory<>("nom_societe"));
+        address.setCellValueFactory(new PropertyValueFactory<>("adresse"));
+        numero.setCellValueFactory(new PropertyValueFactory<>("num_mo"));
+        Tm.setCellValueFactory(new PropertyValueFactory<>("typemateriel"));
+       
+        table.setItems(olist);
+        
     }    
 
-    @FXML
-    private void handleClicks(ActionEvent event) {
+
+    private void GoTOhome(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("../Views/Home.fxml"));
+        scene = new Scene(root);
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    private void GoTOhome(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../Views/Home.fxml"));
+    private void GoToHome(ActionEvent event) throws IOException {
+         root = FXMLLoader.load(getClass().getResource("../Views/Home.fxml"));
         scene = new Scene(root);
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

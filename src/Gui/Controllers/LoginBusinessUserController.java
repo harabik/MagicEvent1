@@ -76,6 +76,24 @@ public class LoginBusinessUserController {
         user.setRole(bu.isRole(user));
         String x = bu.isRole(user);
         System.out.println(user.getRole());
+         // Contrôle de saisie login
+        if ((Login.getText().length()==0) ){
+
+            Login.setStyle("-fx-border-color: red ; -fx-border-width: 2px;");
+            new animatefx.animation.Shake(Login).play();
+            
+        }else Login.setStyle(null);
+        // Contrôle de saisie Password 
+                
+        if ((password.getText().length()==0) ){
+
+            password.setStyle("-fx-border-color: red ; -fx-border-width: 2px;");
+            new animatefx.animation.Shake(password).play();
+            
+        }else password.setStyle(null);
+        
+        
+        
 
         if (bu.isLogin(user)) {
             Node node = (Node) event.getSource();

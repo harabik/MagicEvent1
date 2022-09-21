@@ -11,31 +11,41 @@ package Entites;
 public class Location {
     
     
-     private int id; // default Null
+    private int id; // default Null
     private String nom_societe; // not null
     
-    private String nom; // not null
-    private String num; // not null
-    private String adress; // null
+    private String nom;
+    private String num_mo; // not null
+    private String adresse; // null
     private String email; // not null
-      private String id_ville; // not null
+    private String id_ville; // not null
     private String id_region; // not null
-    
+    private String typemateriel;
     private String active; // not null
 
-    public Location(int id, String nom_societe, String nom, String num, String adress, String email, String id_ville, String id_region, String active) {
+  
+
+    public Location() {
+    }
+
+    public Location(int id, String nom_societe, String nom, String num_mo, String adresse, String email, String id_ville, String id_region, String typemateriel, String active) {
         this.id = id;
         this.nom_societe = nom_societe;
         this.nom = nom;
-        this.num = num;
-        this.adress = adress;
+        this.num_mo = num_mo;
+        this.adresse = adresse;
         this.email = email;
         this.id_ville = id_ville;
         this.id_region = id_region;
+        this.typemateriel = typemateriel;
         this.active = active;
     }
 
-    public Location() {
+    public Location(String nom_societe, String num_mo, String adresse, String typemateriel) {
+        this.nom_societe = nom_societe;
+        this.num_mo = num_mo;
+        this.adresse = adresse;
+        this.typemateriel = typemateriel;
     }
 
     public int getId() {
@@ -46,12 +56,12 @@ public class Location {
         this.id = id;
     }
 
-    public String getNomsociete() {
+    public String getNom_societe() {
         return nom_societe;
     }
 
-    public void setNomsociete(String nomsociete) {
-        this.nom_societe = nomsociete;
+    public void setNom_societe(String nom_societe) {
+        this.nom_societe = nom_societe;
     }
 
     public String getNom() {
@@ -62,20 +72,20 @@ public class Location {
         this.nom = nom;
     }
 
-    public String getNum() {
-        return num;
+    public String getNum_mo() {
+        return num_mo;
     }
 
-    public void setNum(String num) {
-        this.num = num;
+    public void setNum_mo(String num_mo) {
+        this.num_mo = num_mo;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAdresse() {
+        return adresse;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
     public String getEmail() {
@@ -102,6 +112,14 @@ public class Location {
         this.id_region = id_region;
     }
 
+    public String getTypemateriel() {
+        return typemateriel;
+    }
+
+    public void setTypemateriel(String typemateriel) {
+        this.typemateriel = typemateriel;
+    }
+
     public String getActive() {
         return active;
     }
@@ -109,6 +127,9 @@ public class Location {
     public void setActive(String active) {
         this.active = active;
     }
+
+    
+   
     
     
 }

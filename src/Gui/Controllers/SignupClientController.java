@@ -38,30 +38,39 @@ public class SignupClientController implements Initializable {
     private Scene scene;
     private Statement stmt;
     
-    
+     
+    @FXML
+    private TextField Adress;
+
+    @FXML
+    private Button BusinessUsers;
+
+    @FXML
+    private TextField Email;
+
+    @FXML
+    private TextField FirstName;
+
     @FXML
     private TextField Gende;
 
     @FXML
     private TextField LastName;
-    @FXML
-    private TextField FirstName;
-    @FXML
-    private TextField Email;
-    @FXML
-    private TextField Phone;
-    @FXML
-    private TextField UserName;
+
     @FXML
     private PasswordField Password;
-     @FXML
-    private TextField Adress;
+
+    @FXML
+    private TextField Phone;
+
     @FXML
     private Button Register;
-    @FXML
-    private Button BusinessUsers;
+
     @FXML
     private Button Reset;
+
+    @FXML
+    private TextField UserName;
      public void goToSignupBusinessUsers(ActionEvent event) throws IOException {
         
         root = FXMLLoader.load(getClass().getResource("../Views/SignupBusinessUsers.fxml"));
@@ -90,15 +99,13 @@ public class SignupClientController implements Initializable {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Unable to connect to database " + e.getMessage());
         }
-
+    
         try {
             String sql;
             sql = "insert into client(`username`, `password`, `nom`, `prenom`, `image`, `num`, `email`, `gende`, `id_ville`, `id_region`, `adresse`) values ("
                      + "'" + UserName.getText() + "',"
                     + "'" + Password.getText() + "',"
                     + "'" + LastName.getText()  + "',"
-                    
-                    
                     
                     + "'" + FirstName.getText() + "',"
                        + "'" + "rien" + "',"
@@ -111,6 +118,22 @@ public class SignupClientController implements Initializable {
                     + "'" + Adress.getText() 
                     
                     + "')";
+            // Contrôle de saisie username
+//        if ((UserName.getText().length()==0) ){
+//
+//            UserName.setStyle("-fx-border-color: red ; -fx-border-width: 2px;");
+//            new animatefx.animation.Shake(UserName).play();
+//            
+//        }else UserName.setStyle(null);
+//        // Contrôle de saisie Password 
+//                
+//        if ((password.getText().length()==0) ){
+//
+//            password.setStyle("-fx-border-color: red ; -fx-border-width: 2px;");
+//            new animatefx.animation.Shake(password).play();
+//            
+//        }else password.setStyle(null);
+//         
 
             int result = stmt.executeUpdate(sql);
             JOptionPane.showMessageDialog(null, "record saved sucessfully ");

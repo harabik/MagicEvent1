@@ -41,11 +41,5 @@ public class ControlLogin {
         return false;
     }
 
-//    public String getRole(){
-//       
-//        if(type.equals("admin"))
-//            return "admin";
-//        else
-//            return "magasinier";
-//    }
+
 }

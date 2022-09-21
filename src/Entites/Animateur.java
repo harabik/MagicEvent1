@@ -13,31 +13,38 @@ public class Animateur {
     
     
     
-     private int id; // default Null
-       private String nbr_equipe; // not null
+    private int id; // default Null
+    private String nbr_equipe; // not null
     private String username; // not null
     private String prenom; // not null
     private String nom; // not null
     private String num; // not null
-    private String adress; // null
-    private String email; // not null
+    private String adresse; // null
+    private String mail; // not null
     private String gende; // not null
     private String active; // not null
 
-    public Animateur(int id, String nbrequipe, String username, String prenom, String nom, String num, String adress, String email, String gende, String active) {
+    public Animateur(int id, String nbrequipe, String username, String prenom, String nom, String num, String adresse, String mail, String gende, String active) {
         this.id = id;
         this.nbr_equipe = nbrequipe;
         this.username = username;
         this.prenom = prenom;
         this.nom = nom;
         this.num = num;
-        this.adress = adress;
-        this.email = email;
+        this.adresse = adresse;
+        this.mail = mail;
         this.gende = gende;
         this.active = active;
     }
 
     public Animateur() {
+    }
+
+    public Animateur(String nom, String num, String adresse, String mail) {
+        this.nom = nom;
+        this.num = num;
+        this.adresse = adresse;
+        this.mail = mail;
     }
     
 
@@ -89,21 +96,31 @@ public class Animateur {
         this.num = num;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getNbr_equipe() {
+        return nbr_equipe;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setNbr_equipe(String nbr_equipe) {
+        this.nbr_equipe = nbr_equipe;
     }
 
-    public String getEmail() {
-        return email;
+    public String getAdresse() {
+        return adresse;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+  
 
     public String getGende() {
         return gende;

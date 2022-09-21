@@ -14,9 +14,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controllers.GestionCompteS">
    <children>
-      <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="511.0" prefWidth="274.0" style="-fx-background-color: #b9fff8;">
+      <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="511.0" prefWidth="274.0" style="-fx-background-color: #000000;">
          <children>
-            <VBox alignment="CENTER" fillWidth="false" prefHeight="261.0" prefWidth="254.0" style="-fx-background-color: #b9fff8;">
+            <VBox alignment="CENTER" fillWidth="false" prefHeight="261.0" prefWidth="254.0" style="-fx-background-color: #000000;">
                <children>
                   <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -33,26 +33,35 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="Num_mo" promptText="Phone" />
+            <TextField fx:id="Num_mo" promptText="Phone">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></TextField>
             <Label prefHeight="21.0" prefWidth="115.0" text="LastName">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="Nom" promptText="LastName" />
+            <TextField fx:id="Nom" promptText="LastName">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></TextField>
             <Label prefHeight="17.0" prefWidth="54.0" text=" Adress">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="Adresse" promptText="Adress" />
+            <TextField fx:id="Adresse" promptText="Adress">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></TextField>
             <Label prefHeight="17.0" prefWidth="54.0" text=" cin">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
             <TextField fx:id="cin" promptText="Cin" />
-            <Button fx:id="Edit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="79.0" text="Edit">
+            <Button fx:id="Editer" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#Edit" prefHeight="35.0" prefWidth="79.0" text="Edit">
                <font>
                   <Font size="16.0" />
                </font>

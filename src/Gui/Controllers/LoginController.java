@@ -68,7 +68,22 @@ public class LoginController implements Initializable {
         
         user.setUsername(username.getText());
         user.setPassword(password.getText());
+        // Contrôle de saisie username
+        if ((username.getText().length()==0) ){
+
+            username.setStyle("-fx-border-color: red ; -fx-border-width: 2px;");
+            new animatefx.animation.Shake(username).play();
+            
+        }else username.setStyle(null);
+        // Contrôle de saisie Password 
                 
+        if ((password.getText().length()==0) ){
+
+            password.setStyle("-fx-border-color: red ; -fx-border-width: 2px;");
+            new animatefx.animation.Shake(password).play();
+            
+        }else password.setStyle(null);
+        
        
            if (pc.isLogin(user)) {
                Node node = (Node) event.getSource();
@@ -78,6 +93,12 @@ public class LoginController implements Initializable {
                    Scene scene = new Scene(root);      
                    stage.setScene(scene);
                    stage.show();
+                   
+                   
+                   
+                   
+                   
+                   
            }
            else
                loginmessage.setText("Invalid Login .Please try again.");

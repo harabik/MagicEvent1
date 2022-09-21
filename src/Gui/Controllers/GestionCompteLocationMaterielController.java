@@ -67,7 +67,7 @@ public class GestionCompteLocationMaterielController implements Initializable {
 
     @FXML
     private TextField email;
-
+    
     @FXML
     private TextField lastNameFirstName;
 
@@ -180,6 +180,10 @@ public class GestionCompteLocationMaterielController implements Initializable {
 
             }
         }
+    }
+ @FXML
+    void Edit(ActionEvent event) {
+
     }
 
 }
