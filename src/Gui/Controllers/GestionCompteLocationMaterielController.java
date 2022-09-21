@@ -5,6 +5,7 @@
 package Gui.Controllers;
 
 import Entites.Location;
+import Utils.ConnectionDB;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -182,8 +183,27 @@ public class GestionCompteLocationMaterielController implements Initializable {
         }
     }
  @FXML
-    void Edit(ActionEvent event) {
+    void edit(ActionEvent event) {
+        //System.out.println("khalil offffffffff");
+        //System.out.println(Nom.getText());
 
-    }
+         con = ConnectionDB.openConnection();
+        try {
+            try (java.sql.PreparedStatement ps = con
+                    .prepareStatement("UPDATE location SET   adresse = ?, num_mo = ?," +
+                            "cin = ?,email=? WHERE id = 1")) {
 
-}
+                ps.setString(1, Adress.getText());
+                ps.setString(2, Phone.getText());
+                ps.setString(3, cin.getText());
+                ps.setString(4, email.getText());
+
+                ps.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+
+}}

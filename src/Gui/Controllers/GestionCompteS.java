@@ -242,6 +242,7 @@ try {
                 ps.setString(1, Adresse.getText());
                 ps.setString(2, Num_mo.getText());
                 ps.setString(3, cin.getText());
+                
 
                 ps.executeUpdate();
             }
